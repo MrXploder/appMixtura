@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="../css/materialize.css">
   <link rel="stylesheet" href="../css/materialize-stickyfooter.css">
   <link rel='stylesheet' href="../css/loading-bar.css">
-  <link rel="stylesheet" href="../css/spinkit.css">
+  <link rel="stylesheet" href="../css/spinkit.css?v=<?php echo $versionControll ?>">
   <link rel="stylesheet" href="../css/fontawesome.css">
   <link rel="stylesheet" href="../css/webfont.css">
   <!--JAVASCRIPT DEPENDENCIES-->
@@ -37,6 +37,7 @@
   <script src="../js/filters/myShortDateFormatAlt.js"></script>
   <!--ANGULAR RUNS-->
   <script src="../js/runs/navigatorOnline.js"></script>
+  <script src="../js/runs/preLoader.js"></script>
   <!--ANGULAR DIRECTIVES-->
   <script src="../js/directives/stringToNumber.js"></script>
   <!--ANGULAR CONTROLLERS-->

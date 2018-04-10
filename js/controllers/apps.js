@@ -10,7 +10,6 @@ appMixtura.controller('appController', ["$scope", "$rootScope", "$http", "$local
 		$("#detalleProyectoModal").modal({dismissible:!1,opacity:.5,inDuration:300,outDuration:200,startingTop:"4%",endingTop:"10%",ready:function(o,i){},complete:function(){}});
 		$("#detalleClienteModal").modal({dismissible:!1,opacity:.5,inDuration:300,outDuration:200,startingTop:"4%",endingTop:"10%",ready:function(o,i){},complete:function(){}});
 		$("#detalleTechDataServidorModal").modal({dismissible:!1,opacity:.5,inDuration:300,outDuration:200,startingTop:"4%",endingTop:"10%",ready:function(o,i){},complete:function(){}});
-		$("#preloaderScreen").modal({dismissible:!1,opacity:.5,inDuration:300,outDuration:200,startingTop:"30%",endingTop:"30%"});
 	},2000);
 
 

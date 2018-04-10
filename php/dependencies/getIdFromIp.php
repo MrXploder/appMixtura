@@ -12,8 +12,7 @@ function getIdFromIp(){
 		$datos = DB::query("SELECT `dns`, `id_cliente` FROM `clientes`");
 	} 
 	catch (MeekroDBException $e) {
-		echo '{"status":"mysqlError","code":"'.$e->getMessage().'"}';
-		exit();
+		return -1;
 	}
 
 	//Recorremos los datos recibidos buscando una coincidencia.
