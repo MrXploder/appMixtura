@@ -1,4 +1,4 @@
-appMixtura.filter('datealt', function($filter){
+angularApp.filter('datealt', function($filter){
   return function(input){
     if(input == null){ return ""; }
     var _date = $filter('date')(new Date(input), 'dd/MM/yyyy');

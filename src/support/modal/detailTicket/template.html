@@ -1,0 +1,120 @@
+<div class="modal modal-fixed-footer">
+  <div class="modal-content">
+    {{vt}}
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-ticket-alt"></i>
+        <input id="detalleticketId_tarea" type="text" ng-model="selectedTicket.id_tarea" ng-value="selectedTicket.id_tarea" disabled="disabled">
+        <label for="detalleticketId_tarea" ng-class="(selectedTicket.id_tarea != '') ? 'active' : ''">Nº Solicitud</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-calendar-plus"></i>
+        <input id="detalleticketTimestamp_ingreso" type="text" ng-value="selectedTicket.timestamp_ingreso" disabled="disabled">
+        <label for="detalleticketTimestamp_ingreso" ng-class="(selectedTicket.timestamp_ingreso != '') ? 'active' : ''">Fecha de Ingreso</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-building"></i>
+        <input id="detalleticketNom_cliente" type="text" ng-model="selectedTicket.nom_cliente" ng-value="selectedTicket.nom_cliente" disabled="disabled">
+        <label for="detalleticketNom_cliente" ng-class="selectedTicket.nom_cliente ? 'active' : ''">Nombre del Cliente</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-user"></i>
+        <input id="detalleticketNom_solicitante" type="text" ng-model="selectedTicket.nom_solicitante" ng-value="selectedTicket.nom_solicitante" disabled="disabled">
+        <label for="detalleticketNom_solicitante" ng-class="(selectedTicket.nom_solicitante != '') ? 'active' : ''">Nombre del Solicitante</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-envelope"></i>
+        <input id="detalleticketEmail_solicitante" type="text" ng-model="selectedTicket.email_solicitante" ng-value="selectedTicket.email_solicitante" disabled="disabled">
+        <label for="detalleticketEmail_solicitante" ng-class="(selectedTicket.email_solicitante != '') ? 'active' : ''">E-mail del Solicitante</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-globe"></i>
+        <input id="detalleticketIp_solicitante" type="text" ng-model="selectedTicket.ip_solicitante" ng-value="selectedTicket.ip_solicitante" disabled="disabled">
+        <label for="detalleticketIp_solicitante" ng-class="(selectedTicket.ip_solicitante != '') ? 'active' : ''">Ip del Solicitante</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-file-alt"></i>
+        <textarea id="detalleticketDesc_tarea" type="text" ng-model="selectedTicket.desc_tarea" ng-value="selectedTicket.desc_tarea" class="materialize-textarea" disabled="disabled"></textarea>
+        <label for="detalleticketDesc_tarea" ng-class="(selectedTicket.desc_tarea != '') ? 'active' : ''">Descripción de la Solicitud</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-cog"></i>
+        <input id="detalleticketTipo" type="text" ng-model="selectedTicket.tipo" ng-value="selectedTicket.tipo" disabled="disabled">
+        <label for="detalleticketTipo" ng-class="(selectedTicket.tipo != '') ? 'active' : ''">Tipo de Solicitud</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-clock" ng-class="modalEditableInput ? '':'modalEditableInput'"></i>
+        <input id="detalleticketCant_horas" type="number" step="0.05" min="0" max="100" ng-model="selectedTicket.cant_horas" ng-value="selectedTicket.cant_horas" ng-disabled="modalEditableInput" string-to-number>
+        <label for="detalleticketCant_horas" ng-class="(selectedTicket.cant_horas <= 100) ? 'active' : ''">Horas</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-percent" ng-class="modalEditableInput ? '':'modalEditableInput'"></i>
+        <input id="detalleticketPorcentaje_avance" type="number" step="5" min="0" max="100" ng-model="selectedTicket.porcentaje_avance" ng-value="selectedTicket.porcentaje_avance" ng-disabled="modalEditableInput" string-to-number>
+        <label for="detalleticketPorcentaje_avance" ng-class="(selectedTicket.porcentaje_avance <= 100) ? 'active' : ''">Avance</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-user-md" ng-class="modalEditableInput ? '':'modalEditableInput'"></i>
+        <label for="detalleticketSelect_ejecutor1" ng-class="(selectedTicket.id_ejecutor1 != '') ? 'active' : ''">Ejecutor 1</label>
+        <select id="detalleticketSelect_ejecutor1" ng-model="selectedTicket.id_ejecutor1" ng-disabled="modalEditableInput" material-select watch ng-options="operador.id_operador as operador.nom_operador for operador in operadores"></select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-user-md" ng-class="modalEditableInput ? '':'modalEditableInput'"></i>
+        <label for="detalleticketSelect_ejecutor2" ng-class="(selectedTicket.id_ejecutor2 != '') ? 'active' : ''">Ejecutor 2</label>
+        <select id="detalleticketSelect_ejecutor2" ng-model="selectedTicket.id_ejecutor2" ng-disabled="modalEditableInput" material-select watch ng-options="operador.id_operador as operador.nom_operador for operador in operadores"></select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-sort" ng-class="modalEditableInput ? '':'modalEditableInput'"></i>
+        <label for="detalleticketSelect_prioridadtarea" ng-class="(selectedTicket.prioridad_tarea != '') ? 'active' : ''">Prioridad</label>
+        <select id="detalleticketSelect_prioridadtarea" ng-model="selectedTicket.prioridad_tarea" ng-disabled="modalEditableInput" material-select>
+          <option value="0" ng-selected="selectedTicket.prioridad_tarea == 0">Baja</option>
+          <option value="1" ng-selected="selectedTicket.prioridad_tarea == 1">Normal</option>
+          <option value="2" ng-selected="selectedTicket.prioridad_tarea == 2">Urgente</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-calendar-check" ng-class="modalEditableInput ? '':'modalEditableInput'"></i>
+        <input id="detalleticketFec_ejecucion" type="text" class="datepicker" ng-model="selectedTicket.timestamp_ejecucion" value="{{selectedTicket.timestamp_ejecucion ? (selectedTicket.timestamp_ejecucion):'Ingresar una fecha'}}" ng-disabled="modalEditableInput">
+        <label for="detalleticketFec_ejecucion" ng-class="(selectedTicket.timestamp_ejecucion != '') ? 'active' : ''">Fecha de Ejecución</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="prefix fas fa-file-alt" ng-class="modalEditableInput ? '':'modalEditableInput'"></i>
+        <textarea id="detalleticketObs_operador" type="text" ng-model="selectedTicket.obs_operador" ng-value="selectedTicket.obs_operador" class="materialize-textarea" ng-disabled="modalEditableInput"></textarea>
+        <label for="detalleticketObs_operador" ng-class="(selectedTicket.obs_operador != '') ? 'active' : ''">Observación del Operador</label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="fixed-action-btn">
+      <button class="btn-floating btn-large waves-effect waves-light" ng-click="modalEditableInput ? editModalData():saveModalData('Tickets')" ng-class="modalEditableInput ? 'blue':'green'"><i ng-class="modalEditableInput ? 'fas fa-pencil-alt':'fas fa-save'"></i></button>
+      <button class="btn-floating btn-large waves-effect waves-light red" ng-click="modalEditableInput ? exitModal('Tickets'):undoModalData('Tickets')"><i ng-class="modalEditableInput ? 'fas fa-eject':'fas fa-undo'"></i></button>
+    </div>
+  </div>
+</div>

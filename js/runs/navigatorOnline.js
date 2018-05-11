@@ -1,4 +1,4 @@
-appMixtura.run(function($window, $rootScope) {
+angularApp.run(function($window, $rootScope) {
 	$rootScope.online = navigator.onLine;
 	$window.addEventListener("offline", function() {
 		$rootScope.$apply(function() {

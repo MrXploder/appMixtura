@@ -1,1 +1,0 @@
-var appMixtura = angular.module('appMixtura', ['ngStorage', 'angular-loading-bar', 'angularUtils.directives.dirPagination', 'ui.materialize']);

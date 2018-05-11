@@ -1,4 +1,4 @@
-appMixtura.filter('myShortDateFormatAlt', function myDateFormatShort($filter){
+angularApp.filter('myShortDateFormatAlt', function myDateFormatShort($filter){
   return function(text){
   	var  tempdate = new Date(text.replace(/-/g,"/"));
     var  tempdate = new Date(text);
