@@ -4,7 +4,9 @@
 		.module('support')
 		.factory('Clients', clients);
 
+	clients.$inject = ['$resource', '$localStorage'];
+
 	function clients($resource, $localStorage){
-		return $resource("/php/db_transactions/clients.php",{});
+		return $resource("/php/restapi/clients.php",{});
 	};
 })();

@@ -4,7 +4,9 @@
 		.module('support')
 		.factory('Tickets', tickets);
 
+	tickets.$inject = ['$resource', '$localStorage'];
+
 	function tickets($resource, $localStorage){
-		return $resource("/php/db_transactions/tickets.php",{});
+		return $resource("/php/restapi/tickets.php",{});
 	};
 })();

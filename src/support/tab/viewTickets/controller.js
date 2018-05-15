@@ -5,9 +5,9 @@
 		.module('support')
 		.controller('viewTickets', viewTickets);
 
-		viewTickets.$inject = ['Tickets', 'Clients', 'Modal', '$scope'];
+		viewTickets.$inject = ['Tickets', 'Clients', 'Modal', '$scope', '$rootScope'];
 
-		function viewTickets(Tickets, Clients, Modal, $scope){
+		function viewTickets(Tickets, Clients, Modal, $scope, $rootScope){
 			var vt = this;
 
 			vt.clients = Clients.query();
@@ -20,18 +20,22 @@
 			vt.sortReverse = false;
 			vt.tickets = Tickets.query();
 
-
 			function viewTicket(id){
-				vt.selectedTicket = Tickets.get({id});
 				Modal.open({
+					message: {id: angular.copy(id)},
 					scope: $scope,
-					params: {
-						dismissible: false,
-						opacity: .9,
-						inDuration: 500,
-						outDuration: 200,
-						startingTop: "4%",
-						endingTop: "10%"
+					controller: 'detailTicket',
+					controllerAs: 'dt',
+					properties: {
+						dismissible: true, 
+						opacity: .5, 
+						inDuration: 300, 
+						outDuration: 200, 
+						startingTop: "4%", 
+						endingTop: "10%",
+						complete: function(){
+							window.alert("completed");
+						}
 					},
 					templateUrl: "/src/support/modal/detailTicket/template.html",
 				});

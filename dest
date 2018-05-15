@@ -1,0 +1,10 @@
+<?php // Generated on May 15th 2018 @ 3:21:53 AM
+define('LASTCOMMITAUTHOR', '"MrXploder"');
+define('LASTCOMMITMESSAGE', '"temp-update
+"');
+define('LASTCOMMITTIME', '"2018-05-11 01:27:05 -0300"');
+define('CURRENTUSER', 'MrXploder');
+define('SHORTSHA', '0cde6f0');
+define('SHA', '0cde6f09cb9f4ce28d06548c2491711eda980ffa');
+define('NAME', 'master');
+define('LASTCOMMITNUMBER', '5');

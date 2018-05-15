@@ -18,6 +18,7 @@
 			/// ? title {string} The title of the modal.<br />
 			/// ? scope {$scope} The scope to derive from. If not passed, the $rootScope is used<br />
 			/// ? params {object} Objects to pass to the controller as $modalInstance.params<br />
+			/// ? properties {object} Objects to pass to the controller as openModalOptions
 			/// ? template {string} The HTML of the view. Overriden by @templateUrl<br />
 			/// ? templateUrl {string} The URL of the view. Overrides @template<br />
 			/// ? fixedFooter {boolean} TRUE if the modal should have a fixed footer<br />
@@ -32,8 +33,8 @@
 			getTemplate(options).then(function (modalBaseTemplate) {
 				var modalBase = angular.element(modalBaseTemplate);
 
-				var scope = $rootScope.$new(false, options.scope),
-				modalInstance = {
+				var scope = $rootScope.$new(false, options.scope);
+				var modalInstance = {
 					params: options.params || {},
 					close: function (result) {
 						deferred.resolve(result);
@@ -50,13 +51,15 @@
 
 				$compile(modalBase)(scope);
 
-				var openModalOptions = {
+				var openModalOptions = options.properties;
+				console.log(options.properties);
+				/*var openModalOptions = {
 					//ready: function () { alert('Ready'); }, // Callback for Modal open
 					complete: function () { modalInstance.dismiss(); } // Callback for Modal close
 				};
+				*/
 
 				runController(options, modalInstance, scope);
-
 				modalBase.appendTo('body').modal(openModalOptions);
 				modalBase.modal('open');
 
@@ -74,7 +77,8 @@
 
 			var controller = $controller(options.controller, {
 				$scope: scope,
-				$modalInstance: modalInstance
+				modalInstance: modalInstance,
+				Message: options.message,
 			});
 
 			if (angular.isString(options.controllerAs)) {
@@ -126,7 +130,7 @@
 			$timeout(function () {
 				scope.$destroy();
 				modalBase.remove();
-			}, 5000, true);
+			}, 1, true);
 		}
 
 		return service;

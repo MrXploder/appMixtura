@@ -1,6 +1,6 @@
 <?php require $_SERVER['DOCUMENT_ROOT'].'/php/functions/versionControll.php'; ?>
 <!DOCTYPE html>
-<html ng-app="support">
+<html ng-app="support" ng-strict-di ng-cloak>
 <head>
   <title>supportApp</title>
   <!--META-->

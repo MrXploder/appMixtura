@@ -1,6 +1,5 @@
 <div class="collapsible-header amber"><i class="fas fa-search"></i>Administrar Tickets</div>
 <div class="collapsible-body">
-  <a class="btn waves-effect waves-light red" ng-click="vt.showModal()">CLICK ME!</a>
   <div class="row">
     <div class="input-field">
       <i class="prefix fas fa-search"></i>
@@ -75,6 +74,6 @@
   </div>
   &nbsp;
   <div class="row">
-    <dir-pagination-controls boundary-links="true" template-url="dirPagination.tpl.html" pagination-id="ticketsPaginationId" on-page-change="reloadToolTip()"></dir-pagination-controls>
+    <dir-pagination-controls boundary-links="true" template-url="/src/directives/dirPagination/template.html" pagination-id="ticketsPaginationId" on-page-change="reloadToolTip()"></dir-pagination-controls>
   </div>
 </div>
