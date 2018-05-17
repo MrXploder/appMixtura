@@ -52,7 +52,6 @@
 				$compile(modalBase)(scope);
 
 				var openModalOptions = options.properties;
-				console.log(options.properties);
 				/*var openModalOptions = {
 					//ready: function () { alert('Ready'); }, // Callback for Modal open
 					complete: function () { modalInstance.dismiss(); } // Callback for Modal close
@@ -60,8 +59,11 @@
 				*/
 
 				runController(options, modalInstance, scope);
+				console.log(openModalOptions);
 				modalBase.appendTo('body').modal(openModalOptions);
-				modalBase.modal('open');
+				$timeout(function(){
+					modalBase.modal('open');
+				}, 250, true);
 
 			}, function (error) {
 				deferred.reject({ templateError: error });
@@ -75,10 +77,10 @@
 
 			if (!options.controller) return;
 
+			angular.extend(modalInstance, {data: options.bindToInstance});
 			var controller = $controller(options.controller, {
 				$scope: scope,
-				modalInstance: modalInstance,
-				Message: options.message,
+				modalInstance: modalInstance
 			});
 
 			if (angular.isString(options.controllerAs)) {
@@ -130,7 +132,7 @@
 			$timeout(function () {
 				scope.$destroy();
 				modalBase.remove();
-			}, 1, true);
+			}, 2000, true);
 		}
 
 		return service;

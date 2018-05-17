@@ -5,41 +5,85 @@
 		.module('support')
 		.controller('viewTickets', viewTickets);
 
-		viewTickets.$inject = ['Tickets', 'Clients', 'Modal', '$scope', '$rootScope'];
+		viewTickets.$inject = ['Tickets', 'Clients', 'Modal', '$scope', '$localStorage', '$window', 'internetStatus'];
 
-		function viewTickets(Tickets, Clients, Modal, $scope, $rootScope){
+		function viewTickets(Tickets, Clients, Modal, $scope, $localStorage, $window, internetStatus){
 			var vt = this;
 
-			vt.clients = Clients.query();
-			vt.filterByClient = '-1';
-			vt.filterCompletedOnes = null;
-			vt.pagesToShow = 5;
-			vt.searchTerm = '';
-			vt.viewTicket = viewTicket;
-			vt.sortBy = 'id';
-			vt.sortReverse = false;
-			vt.tickets = Tickets.query();
+			vt.clients 					 	 = Clients.query();
+			vt.tickets 						 = Tickets.query();
+			vt.openTicket 			 	 = openTicket;
+			vt.isOnline 					 = isOnline;
+			vt.filterByApplicant 	 = $localStorage.vtFilterByApplicant 	 || '';
+			vt.filterByClient 	 	 = $localStorage.vtFilterByClient 	   || '-1';
+			vt.filterCompletedOnes = $localStorage.vtFilterCompletedOnes || false;
+			vt.pagesToShow 				 = $localStorage.vtPagesToShow 				 || vt.rangesToShow[0];
+			vt.searchTerm 				 = $localStorage.vtSearchTerm 				 || '';
+			vt.sortBy 						 = $localStorage.vtSortBy 						 || 'id';
+			vt.sortReverse 				 = $localStorage.vtSortReverse 				 || false;
+			vt.rangesToShow 			 = [5, 10, 25, 50, 100, 250, 500, 1000];
 
-			function viewTicket(id){
+
+			function openTicket(id){
 				Modal.open({
-					message: {id: angular.copy(id)},
 					scope: $scope,
 					controller: 'detailTicket',
 					controllerAs: 'dt',
+					bindToInstance: {
+						id: angular.copy(id)
+					},
 					properties: {
-						dismissible: true, 
+						dismissible: false, 
 						opacity: .5, 
-						inDuration: 300, 
-						outDuration: 200, 
+						inDuration: 500, 
+						outDuration: 400, 
 						startingTop: "4%", 
 						endingTop: "10%",
-						complete: function(){
-							window.alert("completed");
-						}
 					},
 					templateUrl: "/src/support/modal/detailTicket/template.html",
+				}).then(function closed(response){
+					vt.tickets = Tickets.query();
+				}, function dismised(response){
+					console.log("dismised!");
 				});
 			}
+
+			function isOnline(){
+				return internetStatus.onLine;
+			}
+
+			function modalComplete(){
+				console.log("completed!");
+			}
+
+			$scope.$watch('vt.filterByApplicant', function(newValue, oldValue){
+				$localStorage.vtFilterByApplicant = newValue;
+			}, true);
+
+			$scope.$watch('vt.filterByClient', function(newValue, oldValue){
+				$localStorage.vtFilterByClient = newValue;
+			}, true);
+
+			$scope.$watch('vt.filterCompletedOnes', function(newValue, oldValue){
+				$localStorage.vtFilterCompletedOnes = newValue;
+			}, true);
+
+			$scope.$watch('vt.pagesToShow', function(newValue, oldValue){
+				$localStorage.vtPagesToShow = newValue;
+			}, true);
+
+			$scope.$watch('vt.searchTerm', function(newValue, oldValue){
+				$localStorage.vtSearchTerm = newValue;
+			}, true);
+
+			$scope.$watch('vt.sortBy', function(newValue, oldValue){
+				$localStorage.vtSortBy = newValue;
+			}, true);
+
+			$scope.$watch('vt.sortReverse', function(newValue, oldValue){
+				$localStorage.vtSortReverse = newValue;
+			}, true);
+
 		};
 })();
 /*

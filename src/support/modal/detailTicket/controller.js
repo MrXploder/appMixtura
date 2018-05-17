@@ -5,33 +5,43 @@
 		.module('support')
 		.controller('detailTicket', detailTicket);
 
-		detailTicket.$inject = ['Tickets', 'Operators', '$scope', '$rootScope', 'Message', 'modalInstance'];
+	detailTicket.$inject = ['Tickets', 'Operators', '$scope', '$rootScope', 'modalInstance'];
 
-		function detailTicket(Tickets, Operators, $scope, $rootScope, Message, modalInstance){
-			var dt = this;
+	function detailTicket(Tickets, Operators, $scope, $rootScope, modalInstance){
+		var dt = this;
 
-			dt.disabled = true;
-			dt.operators = Operators.query();
-			dt.selectedTicket = Tickets.get({id: Message.id});
-			dt.leftButton = leftButton;
-			dt.rightButton = rightButton;
+		dt.disabled = true;
+		dt.operators = Operators.query();
+		dt.selectedTicket = Tickets.get({id: modalInstance.data.id});
+		dt.leftButton = leftButton;
+		dt.rightButton = rightButton;
 
-			console.log(modalInstance);
+		function leftButton(){
+			if(dt.disabled){
+				dt.disabled = false;
+			}
+			else{
+				dt.disabled = true;
+				dt.selectedTicket.$update(function success(response){
+					console.log(response);
+					Materialize.toast('Success', 5000, 'green');
+					modalInstance.close(response);
+				}, function error(response){
+					Materialize.toast('Error', 5000, 'red');
+				});
+			}
+		}
 
-			function leftButton(){
-				if(dt.disabled){
-					dt.disabled = false;
-				}
-				else{
-					dt.selectedTicket.save();
-				}
+		function rightButton(){
+			if(!dt.disabled){
+				dt.disabled = true;
+				dt.selectedTicket = Tickets.get({id: modalInstance.data.id});
+			}
+			else{
+				dt.disabled = false;
+				modalInstance.dismiss("userRegret");
 			}
 
-			function rightButton(){
-				if(!dt.disabled){
-					dt.disabled = true;
-				}
-
-			}
-		};
+		}
+	};
 })();

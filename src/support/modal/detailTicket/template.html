@@ -10,8 +10,8 @@
     <div class="row">
       <div class="input-field">
         <i class="prefix fas fa-calendar-plus"></i>
-        <input id="detalleticketTimestamp_ingreso" type="text" ng-value="dt.selectedTicket.start_date" disabled="disabled">
-        <label for="detalleticketTimestamp_ingreso" ng-class="(dt.selectedTicket.start_date != '') ? 'active' : ''">Fecha de Ingreso</label>
+        <input id="detalleticketTimestamp_ingreso" type="text" ng-value="dt.selectedTicket.opened_the" disabled="disabled">
+        <label for="detalleticketTimestamp_ingreso" ng-class="(dt.selectedTicket.opened_the != '') ? 'active' : ''">Fecha de Ingreso</label>
       </div>
     </div>
     <div class="row">
@@ -58,28 +58,28 @@
     </div>
     <div class="row">
       <div class="input-field">
-        <i class="prefix fas fa-clock" ng-class="dt.disabled ? '':'dt.disabled'"></i>
-        <input id="detalleticketCant_horas" type="number" step="0.05" min="0" max="100" ng-model="dt.selectedTicket.amount" ng-value="dt.selectedTicket.amount" ng-disabled="dt.disabled" string-to-number>
+        <i class="prefix fas fa-clock" ng-class="dt.disabled ? '':'highlighter'"></i>
+        <input id="detalleticketCant_horas" type="number" step="0.05" min="0" max="100" ng-model="dt.selectedTicket.time_amount" ng-value="dt.selectedTicket.time_amount" ng-disabled="dt.disabled" string-to-number>
         <label for="detalleticketCant_horas" ng-class="(dt.selectedTicket.amount <= 100) ? 'active' : ''">Horas</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field">
-        <i class="prefix fas fa-percent" ng-class="dt.disabled ? '':'dt.disabled'"></i>
+        <i class="prefix fas fa-percent" ng-class="dt.disabled ? '':'highlighter'"></i>
         <input id="detalleticketPorcentaje_avance" type="number" step="5" min="0" max="100" ng-model="dt.selectedTicket.progress" ng-value="dt.selectedTicket.progress" ng-disabled="dt.disabled" string-to-number>
         <label for="detalleticketPorcentaje_avance" ng-class="(dt.selectedTicket.progress <= 100) ? 'active' : ''">Avance</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field">
-        <i class="prefix fas fa-user-md" ng-class="dt.disabled ? '':'dt.disabled'"></i>
+        <i class="prefix fas fa-user-md" ng-class="dt.disabled ? '':'highlighter'"></i>
         <label for="detalleticketSelect_ejecutor1" ng-class="(dt.selectedTicket.operator_id != '') ? 'active' : ''">Ejecutor 1</label>
         <select id="detalleticketSelect_ejecutor1" ng-model="dt.selectedTicket.operator_id" ng-disabled="dt.disabled" material-select watch ng-options="operator.id as operator.name for operator in dt.operators"></select>
       </div>
     </div>
     <div class="row">
       <div class="input-field">
-        <i class="prefix fas fa-sort" ng-class="dt.disabled ? '':'dt.disabled'"></i>
+        <i class="prefix fas fa-sort" ng-class="dt.disabled ? '':'highlighter'"></i>
         <label for="detalleticketSelect_prioridadtarea" ng-class="(dt.selectedTicket.priority != '') ? 'active' : ''">Prioridad</label>
         <select id="detalleticketSelect_prioridadtarea" ng-model="dt.selectedTicket.priority" ng-disabled="dt.disabled" material-select>
           <option value="0" ng-selected="dt.selectedTicket.priority == 0">Baja</option>
@@ -90,14 +90,14 @@
     </div>
     <div class="row">
       <div class="input-field">
-        <i class="prefix fas fa-calendar-check" ng-class="dt.disabled ? '':'dt.disabled'"></i>
-        <input id="detalleticketFec_ejecucion" type="text" class="datepicker" ng-model="dt.selectedTicket.end_date" value="{{dt.selectedTicket.end_date ? (dt.selectedTicket.end_date):'Ingresar una fecha'}}" ng-disabled="dt.disabled">
-        <label for="detalleticketFec_ejecucion" ng-class="(dt.selectedTicket.end_date != '') ? 'active' : ''">Fecha de Ejecución</label>
+        <i class="prefix fas fa-calendar-check" ng-class="dt.disabled ? '':'highlighter'"></i>
+        <input id="detalleticketFec_ejecucion" type="text" class="datepicker" ng-model="dt.selectedTicket.closed_on" value="{{dt.selectedTicket.closed_on ? (dt.selectedTicket.closed_on):'Ingresar una fecha'}}" ng-disabled="dt.disabled">
+        <label for="detalleticketFec_ejecucion" ng-class="(dt.selectedTicket.closed_on != '') ? 'active' : ''">Fecha de Ejecución</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field">
-        <i class="prefix fas fa-file-alt" ng-class="dt.disabled ? '':'dt.disabled'"></i>
+        <i class="prefix fas fa-file-alt" ng-class="dt.disabled ? '':'highlighter'"></i>
         <textarea id="detalleticketObs_operador" type="text" ng-model="dt.selectedTicket.comments" ng-value="dt.selectedTicket.comments" class="materialize-textarea" ng-disabled="dt.disabled"></textarea>
         <label for="detalleticketObs_operador" ng-class="(dt.selectedTicket.comments != '') ? 'active' : ''">Observación del Operador</label>
       </div>

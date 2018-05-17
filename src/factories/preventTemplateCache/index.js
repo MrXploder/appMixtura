@@ -9,7 +9,9 @@
     var ENV = $injector.get('ENV');
     return {
       'request': function(config) {
-        config.url = config.url + '?t=' + ENV.build;
+        if (config.url.indexOf('template') !== -1) {
+          config.url = config.url + '?t=' + ENV.SHA;
+        }
         return config;
       }
     }
