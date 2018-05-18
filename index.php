@@ -30,31 +30,25 @@
     }
   }
   else if(constant("envDebug") == "production"){
-    echo '<link rel="stylesheet" href="../dist/${envSHA}.min.css">', PHP_EOL;
-    echo '<script src="../dist/${envSHA}.min.js"></script>', PHP_EOL;
+    echo '<link rel="stylesheet" href="../dist/'.constant('envSHA').'.min.css">', PHP_EOL;
+    echo '<script src="../dist/'.constant('envSHA').'.min.obs.js"></script>', PHP_EOL;
   }
   ?>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
   <header>
-    <div class="navbar">
-      <nav class="white">
-        <div class="nav-wrapper">
-          <a href="#"><img src="../img/mixtura-logo.png" style="width: 150px; height: 63px"></img></a>
-        </div>
-      </nav>
-    </div>
+    <ul id="slide-out" class="side-nav fixed">
+      <li class="center-align"><img src="img/support-logo.png"></li>
+      <li><a href="#!"><i class="fas fa-ticket-alt"></i> Crear Ticket</a></li>
+      <li><a href="#!/viewTickets"><i class="fas fa-search"></i> Administrar Tickets</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
   </header>
   <main>
-    <div class="container">
-      <div class="row">
-        <div class="col s12 m12 l12">
-          <ul class="collapsible popout" data-collapsible="accordion" watch>
-            <!-- START - ADMINISTRAR TICKETS-->
-            <li ng-include="'/src/support/tab/createTickets/template.html'" ng-controller="createTickets as ct"></li>
-            <li ng-include="'/src/support/tab/viewTickets/template.html'" ng-controller="viewTickets as vt"></li>
-          </ul>
-        </div>
+    <div class="row">
+      <div class="col l12">
+        <ng-view></ng-view>
       </div>
     </div>
   </main>

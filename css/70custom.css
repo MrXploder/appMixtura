@@ -13,6 +13,59 @@ th{
   text-align: center !important;
   vertical-align: middle !important;
 }
+
+/***************
+  HTML Styles
+***************/
+body {
+    background-color: #fcfcfc; }
+
+p.box {
+    padding: 20px; }
+
+p {
+    color: rgba(0, 0, 0, 0.71);
+    padding: 0;
+    -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4, h5, h6 {
+    -webkit-font-smoothing: antialiased; }
+
+nav {
+    overflow: hidden; }
+nav a {
+    -webkit-font-smoothing: antialiased; }
+nav ul li:hover, nav ul li.active {
+    background-color: #ea454b; }
+
+.header {
+    color: #ee6e73;
+    font-weight: 300; }
+
+.caption {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 30px; }
+
+.preview {
+    background-color: #FFF;
+    border: 1px solid #eee;
+    padding: 20px 20px; }
+
+header, main, footer {
+    padding-left: 240px;
+    }
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0; }
+}
+
+nav.top-nav a.page-title {
+    line-height: 122px;
+    font-size: 48px;
+}
+
 .clickable{
   cursor: pointer;
 }
