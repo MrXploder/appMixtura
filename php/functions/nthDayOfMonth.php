@@ -4,7 +4,7 @@
 * @params $day  -> name of the day in the week
 * @params $mon  -> number of the month to seach
 * @params $year -> number of the year to search
-* @author MrXploder @ Mixtura SpA.
+* @author MrXploder
 */
 
 function nth_day_of_month($nbr, $day, $mon, $year){ 
