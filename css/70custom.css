@@ -14,56 +14,64 @@ th{
   vertical-align: middle !important;
 }
 
-/***************
-  HTML Styles
-***************/
 body {
-    background-color: #fcfcfc; }
+  background-color: #ddd; 
+}
 
 p.box {
-    padding: 20px; }
+  padding: 20px; 
+}
 
 p {
-    color: rgba(0, 0, 0, 0.71);
-    padding: 0;
-    -webkit-font-smoothing: antialiased; }
+  color: rgba(0, 0, 0, 0.71);
+  padding: 0;
+  -webkit-font-smoothing: antialiased; 
+}
 
 h1, h2, h3, h4, h5, h6 {
-    -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased; 
+}
 
 nav {
-    overflow: hidden; }
+  overflow: hidden; 
+}
 nav a {
-    -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased; 
+}
 nav ul li:hover, nav ul li.active {
-    background-color: #ea454b; }
+  background-color: #ea454b; 
+}
 
 .header {
-    color: #ee6e73;
-    font-weight: 300; }
+  color: #ee6e73;
+  font-weight: 300; 
+}
 
 .caption {
-    font-size: 1.25rem;
-    font-weight: 300;
-    margin-bottom: 30px; }
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 30px; 
+}
 
 .preview {
-    background-color: #FFF;
-    border: 1px solid #eee;
-    padding: 20px 20px; }
+  background-color: #FFF;
+  border: 1px solid #eee;
+  padding: 20px 20px; 
+}
 
 header, main, footer {
-    padding-left: 240px;
-    }
+  padding-left: 240px;
+}
 
 @media only screen and (max-width : 992px) {
-    header, main, footer {
-        padding-left: 0; }
+  header, main, footer {
+    padding-left: 0; 
+  }
 }
 
 nav.top-nav a.page-title {
-    line-height: 122px;
-    font-size: 48px;
+  line-height: 122px;
+  font-size: 48px;
 }
 
 .clickable{
@@ -127,7 +135,7 @@ nav.top-nav a.page-title {
 .screenCentered{
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 90%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 } 
@@ -149,9 +157,6 @@ nav.top-nav a.page-title {
 }
 .underlined{
   border-bottom: solid 1px black !important;
-}
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
 }
 @media only screen and (max-width: 992px){
   table.responsive-table td {
@@ -178,4 +183,9 @@ nav.top-nav a.page-title {
 }
 .material-tooltip {
   width: 200px !important;
+}
+
+.route-transition.ng-enter{
+  transition: 2.5s ease-in opacity;
+  opacity: 1;
 }

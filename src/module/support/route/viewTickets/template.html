@@ -1,10 +1,7 @@
 <div class="row">
   <nav class="top-nav amber" style="height: auto !important; margin-top: -25px;">
-    <div class="container">
-      <div class="nav-wrapper">
-        <a class="page-title black-text">Tickets</a>
-        <p class="white-text">Aqui se enlistan todos los Tickets disponibles. Podras ver el detalle, editar y/o eliminarlos.</p>
-      </div>
+    <div class="nav-wrapper container">
+      <a class="page-title black-text">Administrar Tickets</a>
     </div>
   </nav>
 </div>
@@ -77,6 +74,6 @@
   </div>
   &nbsp;
   <div class="row">
-    <dir-pagination-controls boundary-links="true" template-url="/src/directives/dirPaginationControls/template.html" pagination-id="ticketsPaginationId" on-page-change="reloadToolTip()"></dir-pagination-controls>
+    <dir-pagination-controls boundary-links="true" template-url="/src/directive/dirPaginationControls/template.html" pagination-id="ticketsPaginationId" on-page-change="reloadToolTip()"></dir-pagination-controls>
   </div>
 </div>

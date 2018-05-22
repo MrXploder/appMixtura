@@ -12,7 +12,7 @@
 				var deferred = $q.defer();
 				$timeout(function(){
 					deferred.resolve("yes!");
-				},2000);
+				},5000);
 				return deferred.promise;
 			}
 		}

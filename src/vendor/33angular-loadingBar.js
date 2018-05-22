@@ -215,7 +215,7 @@ angular.module('cfp.loadingBar', [])
         var $after = parent.lastChild && angular.element(parent.lastChild);
 
         $rootScope.$broadcast('cfpLoadingBar:started');
-        $('#preloaderScreen').modal('open');
+        $('#preLoadingIndicator').modal('open');
         started = true;
 
         if (includeBar) {
@@ -313,7 +313,7 @@ angular.module('cfp.loadingBar', [])
           }
           $animate.leave(spinner);
           $rootScope.$broadcast('cfpLoadingBar:completed');
-          $('#preloaderScreen').modal('close');
+          $('#preLoadingIndicator').modal('close');
         }, 500);
       }
 

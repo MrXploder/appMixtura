@@ -8,8 +8,8 @@ module.exports = function(grunt) {
       options: {
         space: ' ',
         wrap: true,
-        deps: ['ngRoute', 'ngStorage', 'ngResource', 'angular-loading-bar', 'angularUtils.directives.dirPagination', 'ui.materialize'],
-        dest: 'src/support/10index.js',
+        deps: ['ngAnimate', 'ngRoute', 'ngStorage', 'ngResource', 'angular-loading-bar', 'angularUtils.directives.dirPagination', 'ui.materialize'],
+        dest: 'src/module/support/10index.js',
         name: 'support'
       },
       dist: {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         separator: '\n',
       },
       js: {
-        src: ['src/vendor/*.js', 'src/support/*.js', 'src/directives/**/*.js', 'src/factories/**/*.js', 'src/filters/**/*.js',  'src/support/modal/**/*.js', 'src/support/tab/**/*.js'],
+        src: ['src/vendor/*.js', 'src/module/support/*.js', 'src/directive/**/*.js', 'src/factory/**/*.js', 'src/filter/**/*.js',  'src/module/support/modal/**/*.js', 'src/module/support/route/**/*.js'],
         dest: 'dist/<%= gitinfo.local.branch.current.SHA %>.js',
       },
       css:{

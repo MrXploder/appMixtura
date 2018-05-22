@@ -23,11 +23,21 @@
 
 	function routeProvider($routeProvider){
 		$routeProvider
+		.when("/home", {
+			templateUrl: "/src/module/support/route/home/template.html",
+		})
+		.when("/login", {
+			controller: "login",
+			controllerAs: "lg",
+			template: '<div></div>',
+		})
 		.when("/viewTickets", {
 			controller: "viewTickets",
 			controllerAs: "vt",
-			templateUrl : "/src/support/tab/viewTickets/template.html",
+			templateUrl : "/src/module/support/route/viewTickets/template.html",
 		})
-		.otherwise("/");
+		.otherwise({
+			redirectTo: "/login",
+		});
 	};
 })();
