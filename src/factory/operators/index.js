@@ -1,7 +1,8 @@
 (function(){
 	'use strict';
+	
 	angular
-		.module('support')
+		.module('angularApp')
 		.factory('Operators', operators);
 
 	operators.$inject = ['$resource', '$localStorage'];

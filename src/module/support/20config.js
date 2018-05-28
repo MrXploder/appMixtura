@@ -2,8 +2,8 @@
 	'use strict';
 
 	angular
-		.module('support')
-		.config(httpProvider);
+	.module('angularApp')
+	.config(httpProvider);
 
 	httpProvider.$inject = ['$httpProvider'];
 	
@@ -16,28 +16,58 @@
 	'use strict';
 
 	angular
-		.module('support')
-		.config(routeProvider);
+	.module('angularApp')
+	.config(routeProvider);
 
-	routeProvider.$inject = ["$routeProvider"];
+	routeProvider.$inject  = ["$routeProvider"];
+	defaultResolve.$inject = ["userAuthentication", "$rootScope", "$location", "$localStorage"];
+	loginResolve.$inject 	 = ["userAuthentication", "$rootScope", "$location", "$localStorage"];
 
 	function routeProvider($routeProvider){
 		$routeProvider
 		.when("/home", {
 			templateUrl: "/src/module/support/route/home/template.html",
+			resolve: { initialData: defaultResolve },
 		})
 		.when("/login", {
-			controller: "login",
+			controller: "loginController",
 			controllerAs: "lg",
-			template: '<div></div>',
+			template: " ",
+			resolve: { isLoggedIn: loginResolve },
+		})
+		.when("/exit",{
+			controller: "exitController",
+			template: " ",
 		})
 		.when("/viewTickets", {
-			controller: "viewTickets",
+			controller: "viewTicketsController",
 			controllerAs: "vt",
 			templateUrl : "/src/module/support/route/viewTickets/template.html",
+			resolve: { isLoggedIn: defaultResolve	},
+		})
+		.when("/createTickets", {
+			controller: "createTicketsController",
+			controllerAs: "ct",
+			templateUrl: "/src/module/support/route/createTickets/template.html",
+			resolve: { isLoggedIn: defaultResolve },
 		})
 		.otherwise({
-			redirectTo: "/login",
+			redirectTo: "/home",
 		});
+	};
+
+	function defaultResolve(userAuthentication, $rootScope, $location, $localStorage){
+		userAuthentication.isLoggedIn({token: $localStorage.currentUser.token}).$promise.catch(function error(response){
+			$rootScope.$evalAsync(function(){
+				$location.path("/login");
+			});
+		}); 
+	};
+
+	function loginResolve(userAuthentication, $rootScope, $location, $localStorage){
+		userAuthentication.isLoggedIn({token: $localStorage.currentUser.token}).$promise.catch(function error(response){
+			$('#apps-side-nav').hide("fast");
+			$("#login-side-nav").show("slow").css({left: "38%"});
+		}); 
 	};
 })();

@@ -4,11 +4,7 @@ nav ul li a{
 nav a{
   color: black;
 }
-html{
-  /*font-family: 'Alegreya Sans SC';*/
-  font-family: 'Ubuntu Condensed', sans-serif;
-  font-weight: 800;
-}
+
 th{
   text-align: center !important;
   vertical-align: middle !important;
@@ -59,13 +55,14 @@ nav ul li:hover, nav ul li.active {
   padding: 20px 20px; 
 }
 
+
 header, main, footer {
-  padding-left: 240px;
+  padding-left: 300px;
 }
 
 @media only screen and (max-width : 992px) {
-  header, main, footer {
-    padding-left: 0; 
+ header, main, footer {
+    padding-left: 0;
   }
 }
 
@@ -183,9 +180,4 @@ nav.top-nav a.page-title {
 }
 .material-tooltip {
   width: 200px !important;
-}
-
-.route-transition.ng-enter{
-  transition: 2.5s ease-in opacity;
-  opacity: 1;
 }

@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('support')
-		.controller('inputSwitch', inputSwitch);
+		.module('angularApp')
+		.controller('inputSwitchController', inputSwitchController);
 
 	//inputSwitch.$inject = [""];
 
-	function inputSwitch(){
+	function inputSwitchController(){
 
 	};
 })();

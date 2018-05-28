@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         {constName: 'envShortSHA', constValue: '<%= gitinfo.local.branch.current.shortSHA %>'},
         {constName: 'envAuthor', constValue: '<%= gitinfo.local.branch.current.lastCommitAuthor %>'},
         {constName: 'envLastCommitTime', constValue: '<%= gitinfo.local.branch.current.lastCommitTime %>'},
-        {constName: 'envDebug', constValue: '<%= pkg.debug.mode %>'}
+        {constName: 'envBranch', constValue: '<%= gitinfo.local.branch.current.name %>'}
         ],
         src: 'php/enviroment.php',
         dest: 'php/enviroment.php'

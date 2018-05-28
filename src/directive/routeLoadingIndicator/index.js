@@ -1,6 +1,6 @@
 (function(){
   angular
-  .module('support')
+  .module('angularApp')
   .directive('routeLoadingIndicator', routeLoadingIndicator);
 
   routeLoadingIndicator.$inject = ["$rootScope"];

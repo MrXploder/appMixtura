@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 	angular
-		.module('support')
+		.module('angularApp')
 		.directive('inputSwitch', inputSwitch);
 
 	//inputSwitch.$inject = [""];
@@ -10,7 +10,7 @@
 		return {
 			restrict: 'E',
 			scope: {},
-			controller: 'inputSwitch',
+			controller: 'inputSwitchController',
 			controllerAs: 'vm',
 			bindToController: {
 				bind: "=",

@@ -1,6 +1,6 @@
 (function(){
 	angular
-	.module('support')
+	.module('angularApp')
 	.directive('stringToNumber', stringToNumber);
 
 	function stringToNumber(){

@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   angular
-    .module('support')
+    .module('angularApp')
     .filter('unique', unique); 
 
   function unique() {

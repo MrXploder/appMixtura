@@ -2,19 +2,28 @@
 	'use strict';
 
 	angular
-	.module('support')
+	.module('angularApp')
 	.factory("userAuthentication", userAuthentication);
 
-	userAuthentication.$inject = ["$q", "$timeout"];
-	function userAuthentication($q, $timeout){
-		return {
-			isAuthenticated: function(){
-				var deferred = $q.defer();
-				$timeout(function(){
-					deferred.resolve("yes!");
-				},5000);
-				return deferred.promise;
+	userAuthentication.$inject = ["$resource"];
+
+	function userAuthentication($resource){
+		return $resource("/php/restapi/auth.php",{},{
+			logIn:{
+				method: 'POST',
+			},
+			logOut:{
+				method: 'HEAD',
+				params: {
+					action: "logout"
+				},
+			},
+			isLoggedIn:{
+				method: 'HEAD',
+				params: {
+					action: "verify"
+				},
 			}
-		}
-	}
+		});
+	};
 })();

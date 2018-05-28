@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-	.module('support')
+	.module('angularApp')
 	.factory('Modal', modal);
 
 	modal.$inject = ['$http', '$compile', '$rootScope', '$document', '$q', '$controller', '$timeout'];
@@ -51,6 +51,16 @@
 
 				$compile(modalBase)(scope);
 
+				if(typeof options.properties === "undefined"){
+					options.properties = {
+						dismissible: false, 
+						opacity: .5, 
+						inDuration: 500, 
+						outDuration: 400, 
+						startingTop: "4%", 
+						endingTop: "10%",
+					};
+				}
 				var openModalOptions = options.properties;
 				/*var openModalOptions = {
 					//ready: function () { alert('Ready'); }, // Callback for Modal open

@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 	angular
-		.module('support')
+		.module('angularApp')
 		.factory('Clients', clients);
 
 	clients.$inject = ['$resource', '$localStorage'];

@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('support')
-		.controller('detailTicket', detailTicket);
+		.module('angularApp')
+		.controller('detailTicketController', detailTicketController);
 
-	detailTicket.$inject = ['Tickets', 'Operators', '$scope', '$rootScope', 'modalInstance'];
+	detailTicketController.$inject = ['Tickets', 'Operators', '$scope', '$rootScope', 'modalInstance'];
 
-	function detailTicket(Tickets, Operators, $scope, $rootScope, modalInstance){
+	function detailTicketController(Tickets, Operators, $scope, $rootScope, modalInstance){
 		var dt = this;
 
 		dt.disabled = true;

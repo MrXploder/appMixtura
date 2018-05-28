@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('support')
+    .module('angularApp')
     .directive('compile', function($compile){
       return {
         restrict: 'A',

@@ -1,6 +1,6 @@
 (function(){
   angular
-    .module('support')
+    .module('angularApp')
     .factory('preventTemplateCache', preventTemplateCache);
 
   preventTemplateCache.$inject = ['$injector'];

@@ -1,9 +1,9 @@
 (function(){
 	angular
-	.module('support')
-	.controller('preLoadingIndicator', preLoadingIndicator);
+	.module('angularApp')
+	.controller('preLoadingIndicatorController', preLoadingIndicatorController);
 
-	function preLoadingIndicator(){
+	function preLoadingIndicatorController(){
 		$("#preLoadingIndicator").modal({
 			dismissible:!1,
 			opacity:.5,

@@ -2,14 +2,14 @@
 	'use strict';
 
 	angular
-	.module('support')
+	.module('angularApp')
 	.directive('sideNav', sideNav);
 
 	function sideNav(){
 		return{
 			restrict: 'E',
 			scope: {},
-			controller: 'sideNav',
+			controller: 'sideNavController',
 			controllerAs: 'vm',
 			bindToController:{
 				elements: '=',

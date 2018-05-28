@@ -2549,7 +2549,8 @@ html {
 
 ul:not(.browser-default) {
   padding-left: 0;
-  list-style-type: none;
+  /* list-style-type: none; */
+  ne; */
 }
 
 ul:not(.browser-default) > li {
@@ -2878,7 +2879,7 @@ ul.staggered-list li {
 }
 
 .page-footer {
-  padding-top: 20px;
+  /* padding-top: 20px; */
   color: #fff;
   background-color: #ee6e73;
 }
@@ -3421,8 +3422,7 @@ nav ul a span.badge {
   float: left;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  /*padding: 0 0.75rem;*/
-  padding: 0;
+  padding: 0 0.75rem;
   min-height: 1px;
 }
 
@@ -7524,7 +7524,7 @@ input[type=range]:focus::-ms-fill-upper {
 .side-nav.fixed {
   left: 0;
   -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
   position: fixed;
 }
 
@@ -7536,7 +7536,7 @@ input[type=range]:focus::-ms-fill-upper {
 @media only screen and (max-width: 992px) {
   .side-nav.fixed {
     -webkit-transform: translateX(-105%);
-            transform: translateX(-105%);
+    transform: translateX(-105%);
   }
   .side-nav.fixed.right-aligned {
     -webkit-transform: translateX(105%);
@@ -8310,19 +8310,10 @@ input[type=range]:focus::-ms-fill-upper {
   visibility: visible;
   -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
           animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-  -webkit-transition: opacity .3s,
- visibility 0s 1s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- visibility 0s 1s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s 1s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s 1s,
- -webkit-transform .3s;
+  -webkit-transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
+  transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility 0s 1s;
+  transition: opacity .3s, transform .3s, visibility 0s 1s, -webkit-transform .3s;
 }
 
 .tap-target {
@@ -8375,19 +8366,10 @@ input[type=range]:focus::-ms-fill-upper {
 
 .tap-target-wave::after {
   visibility: hidden;
-  -webkit-transition: opacity .3s,
- visibility 0s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- visibility 0s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s,
- -webkit-transform .3s;
+  -webkit-transition: opacity .3s, visibility 0s, -webkit-transform .3s;
+  transition: opacity .3s, visibility 0s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility 0s;
+  transition: opacity .3s, transform .3s, visibility 0s, -webkit-transform .3s;
   z-index: -1;
 }
 

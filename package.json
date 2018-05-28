@@ -30,8 +30,5 @@
   "bugs": {
     "url": "https://github.com/MrXploder/appMixtura/issues"
   },
-  "homepage": "https://github.com/MrXploder/appMixtura#readme",
-  "debug": {
-    "mode": "development"
-  }
+  "homepage": "https://github.com/MrXploder/appMixtura#readme"
 }

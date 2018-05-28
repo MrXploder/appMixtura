@@ -2,25 +2,19 @@
 	'use strict';
 
 	angular
-	.module('support')
-	.controller('createTickets', createTickets);
+	.module('angularApp')
+	.controller('createTicketsController', createTicketsController);
 
-	createTickets.$inject = ['Tickets', 'Clients'];
+	createTicketsController.$inject = ['Tickets', 'Clients'];
 
-	function createTickets(Tickets, Clients){
+	function createTicketsController(Tickets, Clients){
 		var ct = this;
 
 		ct.clients = Clients.query();
 		ct.newTicket = {};
-		ct.saveTicket = saveTicket;
+		ct.submitTicket = submitTicket;
 
-		function saveTicket(){
-			Tickets.create(ct.newTicket, function success(response){
-				Materialize.toast('Ticket Creado con Éxito!', 5000, 'green');
-				ct.newTicket = {};
-			}, function error(response){
-				Materialize.toast('No se pudo crear el Ticket', 5000, 'red');
-			});
+		function submitTicket(){
 		}
 	}
 })();
