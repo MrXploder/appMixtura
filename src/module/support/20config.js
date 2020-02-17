@@ -16,18 +16,6 @@
   angular.module("angularApp").config(routeProvider);
 
   routeProvider.$inject = ["$routeProvider"];
-  defaultResolve.$inject = [
-    "userAuthentication",
-    "$rootScope",
-    "$location",
-    "$localStorage"
-  ];
-  loginResolve.$inject = [
-    "userAuthentication",
-    "$rootScope",
-    "$location",
-    "$localStorage"
-  ];
 
   function routeProvider($routeProvider) {
     $routeProvider
