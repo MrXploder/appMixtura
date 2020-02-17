@@ -1,4 +1,4 @@
-<?php require $_SERVER['DOCUMENT_ROOT'].'/app/php/functions/versionControll.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/app/php/functions/versionControll.php'; ?>
 <!DOCTYPE html>
 <html ng-app="angularApp" ng-controller="mainController as mc" ng-strict-di>
 
@@ -7,9 +7,10 @@
   <!--META-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <base href="http://www.tecnomixtura.cl/" target="_blank">
+  <base href="http://www.tecnomixtura.cl/app/" target="_blank">
   <!--NOSCRIPT-->
-  <noscript><meta http-equiv="Refresh" content="0; URL=./nojs.html"></noscript>
+  <noscript>
+    <meta http-equiv="Refresh" content="0; URL=./nojs.html"></noscript>
   <link rel="manifest" href="/app/manifest.json">
   <!--No descuidar el orden de los archivos CCS y JS-->
   <!--CSS DEPENDENCIES-->
@@ -44,132 +45,148 @@
   <!--ANGULAR CONTROLLERS-->
   <script src="/app/js/controllers/apps.js?v=<?php echo $versionControll ?>"></script>
   <!--CUSTOM STYLES -->
-  <style>    
-  nav ul li a{
-    color: black;
-  }
-  nav a{
-    color: black;
-  }
-  html{
-    /*font-family: 'Alegreya Sans SC';*/
-    font-family: 'Ubuntu Condensed', sans-serif;
-    font-weight: 1000;
-  }
-  th{
-    text-align: center !important;
-    vertical-align: middle !important;
-  }
-  .clickable{
-    cursor: pointer;
-  }
-  .condensed-table tr th{
-    line-height: 0px;
-  }
-  .condensed-table td{
-    padding: 6px 5px;
-  }
-  .trunkated-table{
-    width: 100%;
-    table-layout: fixed;
-  }
-  .colored-table th{
-    background-color: #4caf50;
-    color: white;
-  }
-  .colored-table-green th{
-    background-color: #4caf50;
-    color: white;
-  }
-  .colored-table-amber th{
-    background-color: #ffc107;
-    color: black;
-  }
-  .colored-table-deeporange th{
-    background-color: #ff5722;
-    color: black;
-  }
-  .colored-table-blue th{
-    background-color: #2196f3;
-    color: black;
-  }
-  .btn-small {
-    height: 100%;
-    width: 100%;
-    line-height: 25px;
-    padding: 0 0.5rem;
-  }
-  .btn{
-    width: 100%;
-  }
-  .btnForTable{
-    padding: 0 0rem !important;
-  }
-  .modal-topbordered{
-    border-top-style: solid;
-    border-top-width: 10px;
-  }
-  .green-topbordered{
-    border-top-color: #4CAF50;
-  }
-  .purple-topbordered{
-    border-top-color: #9c27b0;
-  }
-  .red-topbordered{
-    border-top-color: #f44336;
-  }
-  .screenCentered{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  } 
-  .modalEditableInput {
-    color: #2196f3;
-  }
-  .vMiddle{
-    vertical-align: middle;
-  }
-  .hCenter{
-    text-align: center;
-  }
-  .sortedColumn{
-    background-color: #ff9800 !important;
-    color: #000000 !important;
-  }
-  .input-field label{
-    color: black !important;
-  }
-  .underlined{
-    border-bottom: solid 1px black !important;
-  }
-  [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none !important;
-  }
-  @media only screen and (max-width: 992px){
-    table.responsive-table td {
-      text-align: center !important;
+  <style>
+    nav ul li a {
+      color: black;
     }
-    unset($i);
 
-    foreach ($globsJS as $glob) {
-      $files = glob($glob, GLOB_BRACE);
-      for ($i = 0; $i < count($files); $i++) {
-        echo '<script src="..' . $files[$i] . '?v=' . constant("envSHA") . '"></script>', PHP_EOL;
-      }
-      unset($i);
+    nav a {
+      color: black;
     }
-  } else if (constant("envBranch") == "master") {
-    echo '<link rel="stylesheet" href="/app/dist/' . constant('envSHA') . '.min.css">', PHP_EOL;
-    echo '<script src="/app/dist/' . constant('envSHA') . '.min.obs.js"></script>', PHP_EOL;
-  }
-  else if(constant("envDebug") == "production"){
-    echo '<link rel="stylesheet" href="/app/dist/${envSHA}.min.css">', PHP_EOL;
-    echo '<script src="/app/dist/${envSHA}.min.js"></script>', PHP_EOL;
-  }
-  ?>
-  <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
+
+    html {
+      /*font-family: 'Alegreya Sans SC';*/
+      font-family: 'Ubuntu Condensed', sans-serif;
+      font-weight: 1000;
+    }
+
+    th {
+      text-align: center !important;
+      vertical-align: middle !important;
+    }
+
+    .clickable {
+      cursor: pointer;
+    }
+
+    .condensed-table tr th {
+      line-height: 0px;
+    }
+
+    .condensed-table td {
+      padding: 6px 5px;
+    }
+
+    .trunkated-table {
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .colored-table th {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .colored-table-green th {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .colored-table-amber th {
+      background-color: #ffc107;
+      color: black;
+    }
+
+    .colored-table-deeporange th {
+      background-color: #ff5722;
+      color: black;
+    }
+
+    .colored-table-blue th {
+      background-color: #2196f3;
+      color: black;
+    }
+
+    .btn-small {
+      height: 100%;
+      width: 100%;
+      line-height: 25px;
+      padding: 0 0.5rem;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    .btnForTable {
+      padding: 0 0rem !important;
+    }
+
+    .modal-topbordered {
+      border-top-style: solid;
+      border-top-width: 10px;
+    }
+
+    .green-topbordered {
+      border-top-color: #4CAF50;
+    }
+
+    .purple-topbordered {
+      border-top-color: #9c27b0;
+    }
+
+    .red-topbordered {
+      border-top-color: #f44336;
+    }
+
+    .screenCentered {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .modalEditableInput {
+      color: #2196f3;
+    }
+
+    .vMiddle {
+      vertical-align: middle;
+    }
+
+    .hCenter {
+      text-align: center;
+    }
+
+    .sortedColumn {
+      background-color: #ff9800 !important;
+      color: #000000 !important;
+    }
+
+    .input-field label {
+      color: black !important;
+    }
+
+    .underlined {
+      border-bottom: solid 1px black !important;
+    }
+
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+      display: none !important;
+    }
+
+    @media only screen and (max-width: 992px) {
+      table.responsive-table td {
+        text-align: center !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -179,54 +196,54 @@
         <div class="nav-wrapper">
           <a href="#"><img src="/app/img/mixtura-logo.png" style="width: 150px; height: 63px"></img></a>
         </div>
-      </li>
-      <ng-form name="lg">
-        <li>
-          <div input-field class="container row">
-            <i class="fas fa-user-tie prefix"></i>
-            <label for="userName" class="active">Nombre de Usuario</label>
-            <input type="text" id="userName" ng-model="mc.form.name" required>
-          </div>
         </li>
-        <li>
-          <div input-field class="container row">
-            <i class="fas fa-key prefix"></i>
-            <label for="userPass" class="active">Contraseña</label>
-            <input type="password" id="userPass" ng-model="mc.form.pass" required>
-          </div>
-        </li>
-        <li>
-          <div class="container">
-            <a class="btn waves-effect waves-light blue" ng-click="mc.logIn()" ng-disabled="!lg.$valid">LogIn</a>
-          </div>
-        </li>
-      </ng-form>
-    </ul>
-    <ul id="apps-side-nav" class="side-nav fixed grey darken-4">
-      <li>
-        <div class="user-view">
-          <div class="background">
-            <img src="/app/img/sidenav-background.jpg">
-          </div>
-          <a><img class="circle center" ng-src="/app/img/avatar{{$storage.currentUser.avatar}}.png"></a>
-          <br>
-        </div>
-      </li>
-      <li><a href="#!/createTickets" class="white-text"><i class="fas fa-ticket-alt white-text"></i>Crear Tickets</a></li>
-      <li><a href="#!/viewTickets" class="white-text"><i class="fas fa-toolbox white-text"></i>Administrar Tickets</a></li>
-      <li><a href="#!/billTickets" class="white-text"><i class="fas fa-money-bill-alt white-text"></i>Facturar Tickets</a></li>
-      <li>
-        <div class="divider"></div>
-      </li>
-      <li><a href="#!/exit" class="white-text"><i class="fas fa-search white-text"></i>LogOut</a></li>
-    </ul>
-    <a class="btn-floating btn-large btn-flat waves-effect waves-light button-collapse hide-on-med-and-up" data-activates="apps-side-nav"><i class="fas fa-plus"></i></a>
+        <ng-form name="lg">
+          <li>
+            <div input-field class="container row">
+              <i class="fas fa-user-tie prefix"></i>
+              <label for="userName" class="active">Nombre de Usuario</label>
+              <input type="text" id="userName" ng-model="mc.form.name" required>
+            </div>
+          </li>
+          <li>
+            <div input-field class="container row">
+              <i class="fas fa-key prefix"></i>
+              <label for="userPass" class="active">Contraseña</label>
+              <input type="password" id="userPass" ng-model="mc.form.pass" required>
+            </div>
+          </li>
+          <li>
+            <div class="container">
+              <a class="btn waves-effect waves-light blue" ng-click="mc.logIn()" ng-disabled="!lg.$valid">LogIn</a>
+            </div>
+          </li>
+        </ng-form>
+        </ul>
+        <ul id="apps-side-nav" class="side-nav fixed grey darken-4">
+          <li>
+            <div class="user-view">
+              <div class="background">
+                <img src="/app/img/sidenav-background.jpg">
+              </div>
+              <a><img class="circle center" ng-src="/app/img/avatar{{$storage.currentUser.avatar}}.png"></a>
+              <br>
+            </div>
+          </li>
+          <li><a href="#!/createTickets" class="white-text"><i class="fas fa-ticket-alt white-text"></i>Crear Tickets</a></li>
+          <li><a href="#!/viewTickets" class="white-text"><i class="fas fa-toolbox white-text"></i>Administrar Tickets</a></li>
+          <li><a href="#!/billTickets" class="white-text"><i class="fas fa-money-bill-alt white-text"></i>Facturar Tickets</a></li>
+          <li>
+            <div class="divider"></div>
+          </li>
+          <li><a href="#!/exit" class="white-text"><i class="fas fa-search white-text"></i>LogOut</a></li>
+        </ul>
+        <a class="btn-floating btn-large btn-flat waves-effect waves-light button-collapse hide-on-med-and-up" data-activates="apps-side-nav"><i class="fas fa-plus"></i></a>
 
   </header>
   <main>
     <div class="row">
       <div class="col l12 s12">
-        <ng-include src="'/src/module/support/include/loader/template.html'" ng-show="mc.isRouteLoading"></ng-include>
+        <ng-include src="'/app/src/module/support/include/loader/template.html'" ng-show="mc.isRouteLoading"></ng-include>
         <ng-view ng-show="!mc.isRouteLoading"></ng-view>
       </div>
       <!-- END - MODAL - PROYECTOS -->
@@ -292,15 +309,17 @@
                 <div class="collapsible-header" ng-class="online ? 'red':'white'"><i class="fas fa-ticket-alt"></i>Crear Ticket</div>
                 <div class="collapsible-body">
                   <div class="container">
-                    <ng-form name="ct_form"> 
-                      <div class="row"><h5 class="underlined">Rellena con tus datos personales</h5></div>
-                      <div ng-show="isAdmin.status" class="row"> 
+                    <ng-form name="ct_form">
+                      <div class="row">
+                        <h5 class="underlined">Rellena con tus datos personales</h5>
+                      </div>
+                      <div ng-show="isAdmin.status" class="row">
                         <div class="input-field">
                           <label for="newticketSelectCliente" ng-class="(newTicket.id_cliente != '') ? 'active' : ''">Nombre del Cliente</label>
                           <select id="newticketSelectCliente" class="validate" ng-model="newTicket.id_cliente" ng-options="cliente.id_cliente as cliente.nom_cliente for cliente in clientes" required material-select watch></select>
                         </div>
                       </div>
-                      <div ng-show="isAdmin.status" class="row"> 
+                      <div ng-show="isAdmin.status" class="row">
                         <div class="input-field">
                           <label for="newticketSelectPrioridad" ng-class="(newTicket.prioridad_tarea != '') ? 'active' : ''">Prioridad del Ticket</label>
                           <select id="newticketSelectPrioridad" class="validate" ng-model="newTicket.prioridad_tarea" required novalidate material-select watch>
@@ -330,21 +349,23 @@
                           <label for="newticketTextArea" ng-class="'active'">Tu Solicitud</label>
                         </div>
                       </div>
-                      <div class="row"><h5 class="underlined">Elige el tipo de Solicitud que mas se asemeje a tu problema</h5></div>
                       <div class="row">
-                        <input id="newticketRadioSistema" ng-model="newTicket.tipo" type="radio" required="required" value="SISTEMA"/>
+                        <h5 class="underlined">Elige el tipo de Solicitud que mas se asemeje a tu problema</h5>
+                      </div>
+                      <div class="row">
+                        <input id="newticketRadioSistema" ng-model="newTicket.tipo" type="radio" required="required" value="SISTEMA" />
                         <label for="newticketRadioSistema" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Sistema operativo, programas, etc.">SISTEMA</label>
                       </div>
                       <div class="row">
-                        <input id="newticketRadioTecnica" ng-model="newTicket.tipo"  type="radio" required="required" value="TECNICA"/>
+                        <input id="newticketRadioTecnica" ng-model="newTicket.tipo" type="radio" required="required" value="TECNICA" />
                         <label for="newticketRadioTecnica" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Mouse, teclado, piezas fisicas, desconexion intermitente, etc">TECNICA</label>
                       </div>
                       <div class="row">
-                        <input id="newticketRadioSantiago" ng-model="newTicket.tipo"  type="radio" required="required" value="SANTIAGO"/>
+                        <input id="newticketRadioSantiago" ng-model="newTicket.tipo" type="radio" required="required" value="SANTIAGO" />
                         <label for="newticketRadioSantiago" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Especifico para Santiago">SANTIAGO</label>
                       </div>
                       <div class="row">
-                        <input id="newticketRadioOtro" ng-model="newTicket.tipo"  type="radio" required="required" value="OTRO"/>
+                        <input id="newticketRadioOtro" ng-model="newTicket.tipo" type="radio" required="required" value="OTRO" />
                         <label for="newticketRadioOtro" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Si no sabe, eliga esta opción.">OTRO</label>
                       </div>
                       <div class="divider"></div>
@@ -503,11 +524,23 @@
                     <div class="row">
                       <div ng-repeat="cliente in clientes | filter:{id_cliente:facturar.id_cliente} as results" class="hCenter">
                         <table class="bordered highlight colored-table" style="border: 1px solid #e0e0e0;">
-                          <tr><th><h5>{{cliente.nom_cliente}}</h5></th></tr>
-                          <tr><td>Horas Pactadas: {{cliente.horas_pactadas}}hrs</td></tr>
-                          <tr><td>Horas Ejecutadas: {{arr[facturar.y][facturar.m][cliente.id_cliente].toFixed(2)}}hrs</td></tr>
-                          <tr><td>Horas Adicionales: {{calculateAfterHours(cliente.horas_pactadas, arr[facturar.y][facturar.m][cliente.id_cliente])}}hrs</td></tr>
-                          <tr><td class="vMiddle hCenter"><button class="btn-floating btn-large waves-effect waves-light blue" ng-click="downloadReport(facturar.y, facturar.m, cliente.id_cliente, cliente.nom_cliente)"><i class="fas fa-download"></i></button></td></tr>
+                          <tr>
+                            <th>
+                              <h5>{{cliente.nom_cliente}}</h5>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td>Horas Pactadas: {{cliente.horas_pactadas}}hrs</td>
+                          </tr>
+                          <tr>
+                            <td>Horas Ejecutadas: {{arr[facturar.y][facturar.m][cliente.id_cliente].toFixed(2)}}hrs</td>
+                          </tr>
+                          <tr>
+                            <td>Horas Adicionales: {{calculateAfterHours(cliente.horas_pactadas, arr[facturar.y][facturar.m][cliente.id_cliente])}}hrs</td>
+                          </tr>
+                          <tr>
+                            <td class="vMiddle hCenter"><button class="btn-floating btn-large waves-effect waves-light blue" ng-click="downloadReport(facturar.y, facturar.m, cliente.id_cliente, cliente.nom_cliente)"><i class="fas fa-download"></i></button></td>
+                          </tr>
                         </table>
                       </div>
                     </div>
@@ -518,9 +551,10 @@
 
               <!-- START - CREAR PROYECTOS -->
               <li ng-show="isAdmin.status">
-                <div class="collapsible-header" ng-class="online ? 'deep-purple':'white'"><i class="fas fa-newspaper"></i>Crear Proyecto</div><div class="collapsible-body">
+                <div class="collapsible-header" ng-class="online ? 'deep-purple':'white'"><i class="fas fa-newspaper"></i>Crear Proyecto</div>
+                <div class="collapsible-body">
                   <div class="container">
-                    <ng-form name="cp_form"> 
+                    <ng-form name="cp_form">
                       <div class="row">
                         <div class="input-field">
                           <label for="newproyectSelectCliente" ng-class="(newProyect.id_cliente != '') ? 'active' : ''">Nombre del Cliente</label>
@@ -609,15 +643,17 @@
                 <div class="collapsible-header" ng-class="online ? 'blue':'white'"><i class="fas fa-calendar-alt"></i>Crear Ticket Programado</div>
                 <div class="collapsible-body">
                   <div class="container">
-                    <ng-form name="ctp_form"> 
-                      <div class="row"><h5 class="underlined">Datos Personales</h5></div>
-                      <div class="row" ng-show="isAdmin.status"> 
+                    <ng-form name="ctp_form">
+                      <div class="row">
+                        <h5 class="underlined">Datos Personales</h5>
+                      </div>
+                      <div class="row" ng-show="isAdmin.status">
                         <div class="input-field">
                           <label for="newticketscheduledSelectCliente" ng-class="(newScheduledTicket.id_cliente != '') ? 'active' : ''">Nombre del Cliente</label>
                           <select id="newticketscheduledSelectCliente" class="validate" ng-model="newScheduledTicket.id_cliente" ng-options="cliente.id_cliente as cliente.nom_cliente for cliente in clientes" required material-select watch></select>
                         </div>
                       </div>
-                      <div ng-show="isAdmin.status" class="row"> 
+                      <div ng-show="isAdmin.status" class="row">
                         <div class="input-field">
                           <label for="newticketscheduledSelectPrioridad" ng-class="(newScheduledTicket.prioridad_tarea != '') ? 'active' : ''">Prioridad del Ticket</label>
                           <select id="newticketscheduledSelectPrioridad" class="validate" ng-model="newScheduledTicket.prioridad_tarea" required novalidate material-select watch>
@@ -647,25 +683,29 @@
                           <label for="newticketscheduledDescTarea" ng-class="'active'">Solicitud</label>
                         </div>
                       </div>
-                      <div class="row"><h5 class="underlined">Tipo de Solicitud</h5></div>
                       <div class="row">
-                        <input id="newticketscheduledRadioSistema" ng-model="newScheduledTicket.tipo" type="radio" required="required" value="SISTEMA"/>
+                        <h5 class="underlined">Tipo de Solicitud</h5>
+                      </div>
+                      <div class="row">
+                        <input id="newticketscheduledRadioSistema" ng-model="newScheduledTicket.tipo" type="radio" required="required" value="SISTEMA" />
                         <label for="newticketscheduledRadioSistema" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Sistema operativo, programas, etc.">SISTEMA</label>
                       </div>
                       <div class="row">
-                        <input id="newticketscheduledRadioTecnica" ng-model="newScheduledTicket.tipo"  type="radio" required="required" value="TECNICA"/>
+                        <input id="newticketscheduledRadioTecnica" ng-model="newScheduledTicket.tipo" type="radio" required="required" value="TECNICA" />
                         <label for="newticketscheduledRadioTecnica" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Mouse, teclado, piezas fisicas, desconexion intermitente, etc">TECNICA</label>
                       </div>
                       <div class="row">
-                        <input id="newticketscheduledRadioSantiago" ng-model="newScheduledTicket.tipo"  type="radio" required="required" value="SANTIAGO"/>
+                        <input id="newticketscheduledRadioSantiago" ng-model="newScheduledTicket.tipo" type="radio" required="required" value="SANTIAGO" />
                         <label for="newticketscheduledRadioSantiago" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Especifico para Santiago">SANTIAGO</label>
                       </div>
                       <div class="row">
-                        <input id="newticketscheduledRadioOtro" ng-model="newScheduledTicket.tipo"  type="radio" required="required" value="OTRO"/>
+                        <input id="newticketscheduledRadioOtro" ng-model="newScheduledTicket.tipo" type="radio" required="required" value="OTRO" />
                         <label for="newticketscheduledRadioOtro" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Si no sabe, eliga esta opción.">OTRO</label>
                       </div>
                       &nbsp;
-                      <div class="row"><h5 class="underlined">Programar</h5></div>
+                      <div class="row">
+                        <h5 class="underlined">Programar</h5>
+                      </div>
                       &nbsp;
                       <div class="row">
                         <div class="input-field">
@@ -797,20 +837,23 @@
                 <div class="collapsible-body">
                   <div class="container">
                     <ng-form name="ctd_form">
-                      <div class="row"><h5 class="underlined" ">Elige para continuar...</h5></div>
                       <div class="row">
-                        <div class="input-field">
-                          <label for="newtechdataTipoTechdata" ng-class="(newTechData.tipo_techdata != '') ? 'active' : ''">TechData</label>                    
-                          <select id="newtechdataTipoTechdata" class="validate" ng-model="newTechData.tipo_techdata" material-select watch required>
-                            <option value="servidor">Servidor</option>
-                            <option value="equipo">Equipo</option>
-                            <option value="ups">UPS</option>
-                            <option value="dvr">DVR</option>
-                          </select>
-                        </div>
+                        <h5 class="underlined" ">Elige para continuar...</h5></div>
+                      <div class=" row">
+                          <div class="input-field">
+                            <label for="newtechdataTipoTechdata" ng-class="(newTechData.tipo_techdata != '') ? 'active' : ''">TechData</label>
+                            <select id="newtechdataTipoTechdata" class="validate" ng-model="newTechData.tipo_techdata" material-select watch required>
+                              <option value="servidor">Servidor</option>
+                              <option value="equipo">Equipo</option>
+                              <option value="ups">UPS</option>
+                              <option value="dvr">DVR</option>
+                            </select>
+                          </div>
                       </div>
                       <div ng-if="newTechData.tipo_techdata == 'servidor'">
-                        <div class="row"><h5 class="underlined">Datos Personales</h5></div>
+                        <div class="row">
+                          <h5 class="underlined">Datos Personales</h5>
+                        </div>
                         <div class="row">
                           <div class="input-field">
                             <label for="newtechdataCliente" ng-class="newTechData.id_cliente ? 'active' : ''">Elige un Cliente</label>
@@ -819,7 +862,7 @@
                         </div>
                         <div class="row">
                           <div class="input-field">
-                            <label for="newtechdataSucursal" ng-class="newTechData.id_sucursal ? 'active' : ''">Elige una Sucursal</label>                     
+                            <label for="newtechdataSucursal" ng-class="newTechData.id_sucursal ? 'active' : ''">Elige una Sucursal</label>
                             <select id="newtechdataSucursal" ng-model="newTechData.id_sucursal" ng-options="sucursal.id_sucursal as sucursal.nom_sucursal for sucursal in sucursales | filter:{id_cliente: newTechData.id_cliente}" required material-select watch></select>
                           </div>
                         </div>
@@ -926,7 +969,9 @@
                         </div>
                       </div>
                       <div ng-if="newTechData.tipo_techdata == 'equipo'">
-                        <div class="row"><h5 class="underlined">Datos Personales</h5></div>
+                        <div class="row">
+                          <h5 class="underlined">Datos Personales</h5>
+                        </div>
                         <div class="row">
                           <div class="input-field">
                             <label for="newtechdataCliente" ng-class="newTechData.id_cliente ? 'active' : ''">Elige un Cliente</label>
@@ -935,13 +980,13 @@
                         </div>
                         <div class="row">
                           <div class="input-field">
-                            <label for="newtechdataSucursal" ng-class="newTechData.id_sucursal ? 'active' : ''">Elige una Sucursal</label>                     
+                            <label for="newtechdataSucursal" ng-class="newTechData.id_sucursal ? 'active' : ''">Elige una Sucursal</label>
                             <select id="newtechdataSucursal" class="validate" ng-model="newTechData.id_sucursal" ng-options="sucursal.id_sucursal as sucursal.nom_sucursal for sucursal in sucursales | filter:{id_cliente: newTechData.id_cliente}" required material-select watch></select>
                           </div>
                         </div>
                         <div class="row">
                           <div class="input-field">
-                            <label for="newtechdataSelectServidor" ng-class="newTechData.id_tds ? 'active' : ''">Elige un Servidor</label>                     
+                            <label for="newtechdataSelectServidor" ng-class="newTechData.id_tds ? 'active' : ''">Elige un Servidor</label>
                             <select id="newtechdataSelectServidor" ng-model="newTechData.id_tds" ng-options="servidor.id_tds as servidor.nom_servidor for servidor in techdata_servidores | filter:{id_cliente: newTechData.id_cliente}" required material-select watch></select>
                           </div>
                         </div>
@@ -971,7 +1016,9 @@
                             </div>
                           </div>
                         </div>
-                        <div class="row"><h5 class="underlined">Datos de Software</h5></div>
+                        <div class="row">
+                          <h5 class="underlined">Datos de Software</h5>
+                        </div>
                         <div class="row">
                           <div class="col l6 s12">
                             <div class="input-field">
@@ -1013,7 +1060,7 @@
                           <div class="col l4 offset-l1 s12">
                             <div class="input-field">
                               <select id="newtechdataSesionMulticuenta" class="validate" ng-model="newTechData.sesion_multicuenta" required material-select>
-                                <option selected="selected" value="0">Deshabilitado</option>                          
+                                <option selected="selected" value="0">Deshabilitado</option>
                                 <option value="1">Habilitado</option>
                               </select>
                               <label for="newtechdataSesionMulticuenta">Estado Windows Multicuenta</label>
@@ -1095,7 +1142,9 @@
                             </div>
                           </div>
                         </div>
-                        <div class="row"><h5 class="underlined">Datos de Hardware</h5></div>
+                        <div class="row">
+                          <h5 class="underlined">Datos de Hardware</h5>
+                        </div>
                         <div class="row">
                           <div class="col l5 s12">
                             <div class="input-field">
@@ -1111,7 +1160,7 @@
                                 <option value="Windows 7 Professional - 64Bits">Windows 7 Professional - 64Bits</option>
                                 <option value="Windows 7 Ultimate - 32Bits">Windows 7 Ultimate - 32Bits</option>
                                 <option value="Windows 7 Ultimate - 64Bits">Windows 7 Ultimate - 64Bits</option>
-                                <option value="Windows 10 Home - 32Bits">Windows 10 Home - 32Bits</option>  
+                                <option value="Windows 10 Home - 32Bits">Windows 10 Home - 32Bits</option>
                                 <option value="Windows 10 Home - 64Bits">Windows 10 Home - 64Bits</option>
                                 <option value="Windows 10 Professional - 32Bits">Windows 10 Professional - 32Bits</option>
                                 <option value="Windows 10 Professional - 64Bits">Windows 10 Professional - 64Bits</option>
@@ -1134,7 +1183,7 @@
                                 <option value="10GB">10GB</option>
                                 <option value="12GB">12GB</option>
                                 <option value="14GB">14GB</option>
-                                <option value="16GB">16GB</option>                        
+                                <option value="16GB">16GB</option>
                               </select>
                               <label for="newtechdataCapRam">Capacidad de la RAM</label>
                             </div>
@@ -1198,7 +1247,15 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row"><table><thead><tr><th>SERVIDORES</th></tr></thead></table></div>
+                  <div class="row">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>SERVIDORES</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
                   <div class="row">
                     <table class="bordered highlight responsive-table trunkated-table colored-table-blue">
                       <thead>
@@ -1231,243 +1288,259 @@
                         <tr ng-if="filteredServidores.length == 0">
                           <td colspan="10">Sin Coincidencias...</td>
                         </tr>
-                      </tbody>                                  
+                      </tbody>
                     </table>
                   </div>
                   <br><br>
-                  <div class="row"><table><thead><tr><th>EQUIPOS</th></tr></thead></table></div>
+                  <div class="row">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>EQUIPOS</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
                   <div class="row">
                     <table class="bordered highlight responsive-table trunkated-table colored-table-green">
-                     <thead>
-                       <tr>
-                         <th>#</th>
-                         <th>UPS</th>
-                         <th>Cliente</th>
-                         <th>Sucursal</th>
-                         <th>Nombre Responsable</th>
-                         <th>Dirección Correo</th>
-                         <th>Contraseña Correo</th>
-                         <th>Usuario Dominio</th>
-                         <th>Contraseña Dominio</th>
-                         <th>Eliminar</th>
-                       </tr>
-                     </thead>
-                     <tbody>
-                       <tr dir-paginate="equipo in filteredEquipos = (techdata_equipos | filter:searchTermTechData | filter: ((selectClienteForTechDataFilter >= 0) || undefined) && {id_cliente : selectClienteForTechDataFilter}) | itemsPerPage: 5 track by equipo.id_tde" pagination-id="tdEquiposPaginationId">
-                        <td class="vMiddle hCenter"><a ng-click="openModal('Equipos', equipo)" class="btn btnForTable waves-effect waves-light blue">{{equipo.id_tde}}</a></td>
-                        <td class="vMiddle hCenter"><a ng-click="equipo.id_ups > 0 ? openModal('UPS', equipo.id_ups):''" class="btn btnForTable waves-effect waves-light" ng-class="equipo.id_ups > 0 ? 'blue' : 'disabled'">{{equipo.id_ups > 0 ? equipo.id_ups : 'N/A'}}</a></td>
-                        <td class="vMiddle">{{equipo.nom_cliente}}</td>
-                        <td class="vMiddle hCenter">{{equipo.nom_sucursal}}</td>
-                        <td class="vMiddle hCenter">{{equipo.responsable}}</td>
-                        <td class="vMiddle hCenter" style="word-break: break-all;">{{equipo.nom_correo}}</td>
-                        <td class="vMiddle hCenter">{{equipo.clave_correo}}</td>
-                        <td class="vMiddle hCenter" style="word-break: break-all;">{{equipo.usuario_dominio}}</td>
-                        <td class="vMiddle hCenter">{{equipo.clave_dominio}}</td>
-                        <td ng-click="eliminarDatos('Equipos', equipo)"><a class="btn btnForTable waves-effect waves-light red"><i class="fas fa-trash"></i></a></td>
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>UPS</th>
+                          <th>Cliente</th>
+                          <th>Sucursal</th>
+                          <th>Nombre Responsable</th>
+                          <th>Dirección Correo</th>
+                          <th>Contraseña Correo</th>
+                          <th>Usuario Dominio</th>
+                          <th>Contraseña Dominio</th>
+                          <th>Eliminar</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr dir-paginate="equipo in filteredEquipos = (techdata_equipos | filter:searchTermTechData | filter: ((selectClienteForTechDataFilter >= 0) || undefined) && {id_cliente : selectClienteForTechDataFilter}) | itemsPerPage: 5 track by equipo.id_tde" pagination-id="tdEquiposPaginationId">
+                          <td class="vMiddle hCenter"><a ng-click="openModal('Equipos', equipo)" class="btn btnForTable waves-effect waves-light blue">{{equipo.id_tde}}</a></td>
+                          <td class="vMiddle hCenter"><a ng-click="equipo.id_ups > 0 ? openModal('UPS', equipo.id_ups):''" class="btn btnForTable waves-effect waves-light" ng-class="equipo.id_ups > 0 ? 'blue' : 'disabled'">{{equipo.id_ups > 0 ? equipo.id_ups : 'N/A'}}</a></td>
+                          <td class="vMiddle">{{equipo.nom_cliente}}</td>
+                          <td class="vMiddle hCenter">{{equipo.nom_sucursal}}</td>
+                          <td class="vMiddle hCenter">{{equipo.responsable}}</td>
+                          <td class="vMiddle hCenter" style="word-break: break-all;">{{equipo.nom_correo}}</td>
+                          <td class="vMiddle hCenter">{{equipo.clave_correo}}</td>
+                          <td class="vMiddle hCenter" style="word-break: break-all;">{{equipo.usuario_dominio}}</td>
+                          <td class="vMiddle hCenter">{{equipo.clave_dominio}}</td>
+                          <td ng-click="eliminarDatos('Equipos', equipo)"><a class="btn btnForTable waves-effect waves-light red"><i class="fas fa-trash"></i></a></td>
+                        </tr>
+                        <tr ng-if="filteredEquipos.length == 0">
+                          <td colspan="10">Sin Coincidencias...</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="row">
+                    <dir-pagination-controls boundary-links="true" template-url="dirPagination.tpl.html" pagination-id="tdEquiposPaginationId"></dir-pagination-controls>
+                  </div>
+                </div>
+              </li>
+              <!-- END - ADMINISTRAR TECHDATA -->
+
+              <!-- START - CREAR CLIENTES -->
+              <li ng-show="isAdmin.status">
+                <div class="collapsible-header" ng-class="online ? 'green':'white'"><i class="fas fa-users"></i></i>Crear Clientes</div>
+                <div class="collapsible-body">
+                  <div class="container">
+                    <ng-form name="cc_form">
+                      <div class="row">
+                        <h5 class="underlined">Datos del Cliente</h5>
+                      </div>
+                      <div class="row">
+                        <div class="input-field">
+                          <input id="newclientNom_cliente" type="text" ng-model="newClient.nom_cliente" required>
+                          <label for="newclientNom_cliente">Nombre Completo del Cliente</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field">
+                          <input id="newclientRut_cliente" type="text" ng-model="newClient.rut_cliente" pattern="\d{3,8}-[\d|kK]{1}" required>
+                          <label for="newclientRut_cliente">R.U.T. del Cliente</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <h5 class="underlined">Sucursales</h5>
+                      </div>
+                      <div class="row" ng-repeat="sucursal in newClient.sucursales">
+                        <div class="col l5 s5">
+                          <div class="input-field">
+                            <input id="{{'newclienteNomSucursal'+$index}}" type="text" ng-model="sucursal.nom_sucursal" required>
+                            <label for="{{'newclientNomSucursal'+$index}}">Nombre de la Sucursal</label>
+                          </div>
+                        </div>
+                        <div class="col l5 offset-l1 s5 offset-s1">
+                          <div class="input-field">
+                            <input id="{{'newclientDirSucursal'+$index}}" type="text" ng-model="sucursal.dir_sucursal" required>
+                            <label for="{{'newclientDirSucursal'+$index}}">Dirección de la Sucursal</label>
+                          </div>
+                        </div>
+                        <div ng-if="$index > 0" class="col l1 s2">
+                          <button class="btn waves-effect waves-light red" ng-click="quitarCampoSucursal(newClient, $index)"><i class="fas fa-times"></i></button>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <button class="btn waves-effect waves-light blue" ng-click="agregarCampoSucursal(newClient)"><i class="fas fa-plus"></i></button>
+                      </div>
+                      &nbsp;
+                      <div class="row">
+                        <h5 class="underlined">Datos Internos</h5>
+                      </div>
+                      <div class="row">
+                        <div class="input-field">
+                          <input id="newclientSigla_cliente" type="text" ng-model="newClient.sigla_cliente" maxlength="5" required>
+                          <label for="newclientSigla_cliente">Sigla del Cliente</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field">
+                          <input id="newclientDns" type="text" ng-model="newClient.dns" required>
+                          <label for="newclientDns">DNS de Desarrollo para el Cliente</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field">
+                          <input id="newclientHoras_pactadas" type="number" min="0" max="45" step="1" ng-model="newClient.horas_pactadas" required>
+                          <label for="newclientHoras_pactadas" ng-class="newClient.horas_pactadas ? 'active':''">Horas de Soporte Contratadas</label>
+                        </div>
+                      </div>
+                      &nbsp;
+                      <div class="divider"></div>
+                      &nbsp;
+                      <div class="row">
+                        <div class="col l5 s6">
+                          <button class="btn waves-effect waves-light green" type="submit" ng-disabled="cc_form.$invalid" ng-click="formSubmit('crearCliente')">Enviar<i class="fas fa-share right"></i></button>
+                        </div>
+                        <div class="col l5 offset-l2 s6">
+                          <button class="btn waves-effect waves-light red" type="reset" ng-click="formReset('crearCliente')">Reset<i class="fas fa-eraser right"></i></button>
+                        </div>
+                      </div>
+                    </ng-form>
+                  </div>
+                </div>
+              </li>
+              <!-- END - CREAR CLIENTES -->
+
+              <!-- START - ADMINISTRAR CLIENTES -->
+              <li ng-show="isAdmin.status">
+                <div class="collapsible-header" ng-class="online ? 'light-green':'white'"><i class="fas fa-cogs"></i>Administrar Clientes</div>
+                <div class="collapsible-body">
+                  <table class="bordered highlight responsive-table clickable-table trunkated-table colored-table">
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Eliminar</th>
                       </tr>
-                      <tr ng-if="filteredEquipos.length == 0">
-                        <td colspan="10">Sin Coincidencias...</td>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="cliente in clientes" ng-if="$index > 0" ng-click="verDetalleCliente()">
+                        <td>{{cliente.id_cliente}}</td>
+                        <td>{{cliente.nom_cliente}}</td>
+                        <td><button class="btn waves-effect waves-light red"><i class="fas fa-times"></i></button></td>
                       </tr>
-                    </tbody> 
+                    </tbody>
                   </table>
                 </div>
-                <div class="row">
-                  <dir-pagination-controls boundary-links="true" template-url="dirPagination.tpl.html" pagination-id="tdEquiposPaginationId"></dir-pagination-controls>
-                </div>
-              </div>
-            </li>
-            <!-- END - ADMINISTRAR TECHDATA -->
+              </li>
+              <!-- END - ADMINISTRAR CLIENTES -->
 
-            <!-- START - CREAR CLIENTES -->
-            <li ng-show="isAdmin.status">
-              <div class="collapsible-header" ng-class="online ? 'green':'white'"><i class="fas fa-users"></i></i>Crear Clientes</div>
-              <div class="collapsible-body">
-                <div class="container">
-                  <ng-form name="cc_form"> 
-                    <div class="row"><h5 class="underlined">Datos del Cliente</h5></div>
-                    <div class="row">
-                      <div class="input-field">
-                        <input id="newclientNom_cliente" type="text" ng-model="newClient.nom_cliente" required>
-                        <label for="newclientNom_cliente">Nombre Completo del Cliente</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="input-field">
-                        <input id="newclientRut_cliente" type="text" ng-model="newClient.rut_cliente" pattern="\d{3,8}-[\d|kK]{1}" required>
-                        <label for="newclientRut_cliente">R.U.T. del Cliente</label>
-                      </div>
-                    </div>
-                    <div class="row"><h5 class="underlined">Sucursales</h5></div>
-                    <div class="row" ng-repeat="sucursal in newClient.sucursales">
-                      <div class="col l5 s5">
+              <!-- START - CREAR OPERADORES-->
+              <li ng-show="isAdmin.status">
+                <div class="collapsible-header" ng-class="online ? 'lime':'white'"><i class="fas fa-user-md"></i>Crear Operadores</div>
+                <div class="collapsible-body">
+                  <div class="container">
+                    <ng-form name="co_form">
+                      <div class="row">
                         <div class="input-field">
-                          <input id="{{'newclienteNomSucursal'+$index}}" type="text" ng-model="sucursal.nom_sucursal" required>
-                          <label for="{{'newclientNomSucursal'+$index}}">Nombre de la Sucursal</label>
+                          <input id="newoperatorNom_cliente" type="text" ng-model="newOperator.nom_operador" required>
+                          <label for="newoperatorNom_cliente">Nombre Completo del Operador</label>
                         </div>
                       </div>
-                      <div class="col l5 offset-l1 s5 offset-s1">
+                      <div class="row">
                         <div class="input-field">
-                          <input id="{{'newclientDirSucursal'+$index}}" type="text" ng-model="sucursal.dir_sucursal" required>
-                          <label for="{{'newclientDirSucursal'+$index}}">Dirección de la Sucursal</label>
+                          <input id="newoperatorRut_cliente" type="text" ng-model="newOperator.rut_operador" pattern="\d{3,8}-[\d|kK]{1}" required>
+                          <label for="newoperatorRut_cliente">R.U.T. del Operador</label>
                         </div>
                       </div>
-                      <div ng-if="$index > 0" class="col l1 s2">
-                        <button class="btn waves-effect waves-light red" ng-click="quitarCampoSucursal(newClient, $index)"><i class="fas fa-times"></i></button>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <button class="btn waves-effect waves-light blue" ng-click="agregarCampoSucursal(newClient)"><i class="fas fa-plus"></i></button>
-                    </div>
-                    &nbsp;
-                    <div class="row"><h5 class="underlined">Datos Internos</h5></div>
-                    <div class="row">
-                      <div class="input-field">
-                        <input id="newclientSigla_cliente" type="text" ng-model="newClient.sigla_cliente" maxlength="5" required>
-                        <label for="newclientSigla_cliente">Sigla del Cliente</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="input-field">
-                        <input id="newclientDns" type="text" ng-model="newClient.dns" required>
-                        <label for="newclientDns">DNS de Desarrollo para el Cliente</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="input-field">
-                        <input id="newclientHoras_pactadas" type="number" min="0" max="45" step="1" ng-model="newClient.horas_pactadas" required>
-                        <label for="newclientHoras_pactadas" ng-class="newClient.horas_pactadas ? 'active':''">Horas de Soporte Contratadas</label>
-                      </div>
-                    </div>
-                    &nbsp;
-                    <div class="divider"></div>
-                    &nbsp;
-                    <div class="row">
-                      <div class="col l5 s6">
-                        <button class="btn waves-effect waves-light green" type="submit" ng-disabled="cc_form.$invalid" ng-click="formSubmit('crearCliente')">Enviar<i class="fas fa-share right"></i></button>
-                      </div>
-                      <div class="col l5 offset-l2 s6">
-                        <button class="btn waves-effect waves-light red" type="reset" ng-click="formReset('crearCliente')">Reset<i class="fas fa-eraser right"></i></button>
-                      </div>
-                    </div>
-                  </ng-form>
-                </div>
-              </div>
-            </li>
-            <!-- END - CREAR CLIENTES -->
-
-            <!-- START - ADMINISTRAR CLIENTES -->
-            <li ng-show="isAdmin.status">
-              <div class="collapsible-header" ng-class="online ? 'light-green':'white'"><i class="fas fa-cogs"></i>Administrar Clientes</div>
-              <div class="collapsible-body">
-                <table class="bordered highlight responsive-table clickable-table trunkated-table colored-table">
-                  <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Nombre</th>
-                      <th>Eliminar</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr ng-repeat="cliente in clientes" ng-if="$index > 0" ng-click="verDetalleCliente()">
-                      <td>{{cliente.id_cliente}}</td>
-                      <td>{{cliente.nom_cliente}}</td>
-                      <td><button class="btn waves-effect waves-light red"><i class="fas fa-times"></i></button></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </li>
-            <!-- END - ADMINISTRAR CLIENTES -->
-
-            <!-- START - CREAR OPERADORES-->
-            <li ng-show="isAdmin.status">
-              <div class="collapsible-header" ng-class="online ? 'lime':'white'"><i class="fas fa-user-md"></i>Crear Operadores</div>
-              <div class="collapsible-body">
-                <div class="container">
-                  <ng-form name="co_form"> 
-                    <div class="row">
-                      <div class="input-field">
-                        <input id="newoperatorNom_cliente" type="text" ng-model="newOperator.nom_operador" required>
-                        <label for="newoperatorNom_cliente">Nombre Completo del Operador</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="input-field">
-                        <input id="newoperatorRut_cliente" type="text" ng-model="newOperator.rut_operador" pattern="\d{3,8}-[\d|kK]{1}" required>
-                        <label for="newoperatorRut_cliente">R.U.T. del Operador</label>
-                      </div>
-                    </div>
-                    &nbsp;
-                    <div class="divider"></div>
-                    &nbsp;
-                    <div class="row">
-                      <div class="col l5 s6">
-                        <button class="btn waves-effect waves-light green" type="submit" ng-disabled="co_form.$invalid" ng-click="formSubmit('crearOperador')">Enviar<i class="fas fa-share right"></i></button>
-                      </div>
-                      <div class="col l5 offset-l2 s6">
-                        <button class="btn waves-effect waves-light red" type="reset" ng-click="formReset('crearOperador')">Reset<i class="fas fa-eraser right"></i></button>
-                      </div>
-                    </div>
-                  </ng-form>
-                </div>
-              </div>
-            </li>
-            <!-- END - CREAR OPERADORES -->
-
-            <!-- START - ADMINISTRAR OPERADORES -->
-            <li ng-show="isAdmin.status">
-              <div class="collapsible-header" ng-class="online ? 'yellow':'white'"><i class="fas fa-search"></i>Administrar Operadores</div>
-              <div class="collapsible-body">
-              </div>
-            </li>
-            <!-- END - ADMINISTRAR OPERADORES -->
-
-            <!-- START - ADMINISTRAR MI CUENTA -->
-            <li ng-show="isAdmin.status">
-              <div class="collapsible-header" ng-class="online ? 'amber':'white'"><i class="fas fa-user"></i>Administrar Mi Cuenta</div>
-              <div class="collapsible-body">
-              </div>
-            </li>
-            <!-- END - ADMINISTRAR MI CUENTA -->
-
-            <!-- START - SUPERADMINISTRADOR -->
-            <li ng-show="!isAdmin.status">
-              <div class="collapsible-header blue-grey"><i class="fab fa-hotjar"></i>Menu de SuperAdministrador</div>
-              <div class="collapsible-body">
-                <div class="container">
-                  <ng-form name="ra_form">
-                    <div class="row"><h5 class="underlined">Ingresar como Administrador</h5></div>
-                    <div class="row">
-                      <div class="col l5 s12">
-                        <div class="input-field">
-                          <input id="superadmin_pass" type="password"  class="validate" ng-model="newAdministrator.superadmin_pass" required="required">
-                          <label for="superadmin_pass">Contraseña de SuperAdministrador</label>
+                      &nbsp;
+                      <div class="divider"></div>
+                      &nbsp;
+                      <div class="row">
+                        <div class="col l5 s6">
+                          <button class="btn waves-effect waves-light green" type="submit" ng-disabled="co_form.$invalid" ng-click="formSubmit('crearOperador')">Enviar<i class="fas fa-share right"></i></button>
+                        </div>
+                        <div class="col l5 offset-l2 s6">
+                          <button class="btn waves-effect waves-light red" type="reset" ng-click="formReset('crearOperador')">Reset<i class="fas fa-eraser right"></i></button>
                         </div>
                       </div>
-                      <div class="col l5 offset-l2 s12">
-                        <div class="input-field">
-                          <input id="admin_id" name="admin_id" type="password" class="validate" ng-model="newAdministrator.admin_id" required="required">
-                          <label for="admin_id">ID de Operador</label>
+                    </ng-form>
+                  </div>
+                </div>
+              </li>
+              <!-- END - CREAR OPERADORES -->
+
+              <!-- START - ADMINISTRAR OPERADORES -->
+              <li ng-show="isAdmin.status">
+                <div class="collapsible-header" ng-class="online ? 'yellow':'white'"><i class="fas fa-search"></i>Administrar Operadores</div>
+                <div class="collapsible-body">
+                </div>
+              </li>
+              <!-- END - ADMINISTRAR OPERADORES -->
+
+              <!-- START - ADMINISTRAR MI CUENTA -->
+              <li ng-show="isAdmin.status">
+                <div class="collapsible-header" ng-class="online ? 'amber':'white'"><i class="fas fa-user"></i>Administrar Mi Cuenta</div>
+                <div class="collapsible-body">
+                </div>
+              </li>
+              <!-- END - ADMINISTRAR MI CUENTA -->
+
+              <!-- START - SUPERADMINISTRADOR -->
+              <li ng-show="!isAdmin.status">
+                <div class="collapsible-header blue-grey"><i class="fab fa-hotjar"></i>Menu de SuperAdministrador</div>
+                <div class="collapsible-body">
+                  <div class="container">
+                    <ng-form name="ra_form">
+                      <div class="row">
+                        <h5 class="underlined">Ingresar como Administrador</h5>
+                      </div>
+                      <div class="row">
+                        <div class="col l5 s12">
+                          <div class="input-field">
+                            <input id="superadmin_pass" type="password" class="validate" ng-model="newAdministrator.superadmin_pass" required="required">
+                            <label for="superadmin_pass">Contraseña de SuperAdministrador</label>
+                          </div>
+                        </div>
+                        <div class="col l5 offset-l2 s12">
+                          <div class="input-field">
+                            <input id="admin_id" name="admin_id" type="password" class="validate" ng-model="newAdministrator.admin_id" required="required">
+                            <label for="admin_id">ID de Operador</label>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="col l5 s6">
-                        <button class="btn waves-effect waves-light green" type="submit" ng-disabled="ra_form.$invalid" ng-click="formSubmit('registrarAdministrador')">Enviar<i class="fas fa-share right"></i></button>
+                      <div class="row">
+                        <div class="col l5 s6">
+                          <button class="btn waves-effect waves-light green" type="submit" ng-disabled="ra_form.$invalid" ng-click="formSubmit('registrarAdministrador')">Enviar<i class="fas fa-share right"></i></button>
+                        </div>
+                        <div class="col l5 offset-l2 s6">
+                          <button class="btn waves-effect waves-light red" type="reset" ng-click="formReset('registrarAdministrador')">Reset<i class="fas fa-eraser right"></i></button>
+                        </div>
                       </div>
-                      <div class="col l5 offset-l2 s6">
-                        <button class="btn waves-effect waves-light red" type="reset" ng-click="formReset('registrarAdministrador')">Reset<i class="fas fa-eraser right"></i></button>
-                      </div>
-                    </div>
-                  </ng-form>
+                    </ng-form>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <!-- END - SUPERADMINISTRADOR -->
-          </ul>
+              </li>
+              <!-- END - SUPERADMINISTRADOR -->
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
   </main>
   <footer class="footer grey darken-3" style="padding-top: 10px; padding-bottom: 10px;">
     <div class="container">
@@ -1488,6 +1561,7 @@
   }
 </script>
 -->
+
 </html>
 
 </html>
