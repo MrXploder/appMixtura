@@ -3,10 +3,10 @@
 date_default_timezone_set("America/Santiago");
 
 
-define('envSHA', '451bdae2b7fb8de24dbd58e6dfac0203211e4452');
-define('envShortSHA', '451bdae');
+define('envSHA', '9bc2d1d19fe2534053e5a093ae0a2cf7b2a96c77');
+define('envShortSHA', '9bc2d1d');
 define('envAuthor', '"Luis Arancibia"');
-define('envLastCommitTime', '"2020-02-17 14:41:07 -0300"');
+define('envLastCommitTime', '"2020-02-17 14:45:25 -0300"');
 define('envBranch', 'master');
 
 ?>

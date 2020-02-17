@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         wrap: true,
         deps: ['ngAnimate', 'ngRoute', 'ngStorage', 'ngResource', 'angular-loading-bar', 'angularUtils.directives.dirPagination', 'ui.materialize'],
         dest: 'src/module/support/10index.js',
-        name: 'support'
+        name: 'angularApp'
       },
       dist: {
         constants: {
