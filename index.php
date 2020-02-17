@@ -1,4 +1,4 @@
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/app'  . '/php/enviroment.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'].'/app/php/enviroment.php'; ?>
 <!DOCTYPE html>
 <html ng-app="angularApp" ng-controller="mainController as mc" ng-strict-di>
 
@@ -9,10 +9,8 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <base href="http://www.tecnomixtura.cl/" target="_blank">
   <!--NOSCRIPT-->
-  <noscript>
-    <meta http-equiv="Refresh" content="0; URL=./nojs.html">
-  </noscript>
-  <link rel="manifest" href="../manifest.json">
+  <noscript><meta http-equiv="Refresh" content="0; URL=./nojs.html"></noscript>
+  <link rel="manifest" href="/app/manifest.json">
   <!--No descuidar el orden de los archivos CCS y JS-->
   <!--CSS DEPENDENCIES-->
   <?php
@@ -36,17 +34,20 @@
     echo '<link rel="stylesheet" href="/app/dist/' . constant('envSHA') . '.min.css">', PHP_EOL;
     echo '<script src="/app/dist/' . constant('envSHA') . '.min.obs.js"></script>', PHP_EOL;
   }
+  else if(constant("envDebug") == "production"){
+    echo '<link rel="stylesheet" href="/app/dist/${envSHA}.min.css">', PHP_EOL;
+    echo '<script src="/app/dist/${envSHA}.min.js"></script>', PHP_EOL;
+  }
   ?>
   <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
 </head>
 
 <body>
   <header>
-    <ul id="login-side-nav" class="side-nav fixed">
-      <li>
-        <div class="user-view grey darken-3">
-          <a><img class="circle" src="/app/img/default-avatar.png"></a>
-          <br>
+    <div class="navbar">
+      <nav class="white">
+        <div class="nav-wrapper">
+          <a href="#"><img src="/app/img/mixtura-logo.png" style="width: 150px; height: 63px"></img></a>
         </div>
       </li>
       <ng-form name="lg">

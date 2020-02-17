@@ -8,7 +8,7 @@ Header("Pragma: no-cache");
 error_reporting(E_ERROR);
 
 
-require $_SERVER['DOCUMENT_ROOT'] . '/app' .'/php/dependencies/meekrodb.class.php';
+require $_SERVER['DOCUMENT_ROOT'].'/app/php/dependencies/meekrodb.class.php';
 //DB::debugMode();
 
 //Buscamos la IP del que solicita la pagina.

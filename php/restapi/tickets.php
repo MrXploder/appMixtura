@@ -6,8 +6,8 @@ Header("Cache-Control: post-check=0, pre-check=0", false);
 Header("Pragma: no-cache");
 error_reporting(E_ERROR);
 
-require $_SERVER['DOCUMENT_ROOT'] . '/app' .'/php/functions/sanitizeInput.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/app' .'/php/dependencies/meekrodb.class.php';
+require $_SERVER['DOCUMENT_ROOT'].'/app/php/functions/sanitizeInput.php';
+require $_SERVER['DOCUMENT_ROOT'].'/app/php/dependencies/meekrodb.class.php';
 
 
 
