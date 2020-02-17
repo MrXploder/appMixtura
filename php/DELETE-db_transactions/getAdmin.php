@@ -7,7 +7,7 @@ Header("Pragma: no-cache");
 // Notificar solamente errores de ejecución
 error_reporting(E_ERROR);
 
-require $_SERVER['DOCUMENT_ROOT'].'/php/dependencies/meekrodb.class.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/app' .'/php/dependencies/meekrodb.class.php';
 //DB::debugMode();
 
 // Recuperamos el mensaje JSON del cuerpo de la solicitud (POST)

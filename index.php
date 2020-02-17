@@ -1,4 +1,4 @@
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/php/enviroment.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/app'  . '/php/enviroment.php'; ?>
 <!DOCTYPE html>
 <html ng-app="angularApp" ng-controller="mainController as mc" ng-strict-di>
 
@@ -7,7 +7,7 @@
   <!--META-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <base href="http://www.tecnomixtura.cl/app/" target="_blank">
+  <base href="http://www.tecnomixtura.cl/" target="_blank">
   <!--NOSCRIPT-->
   <noscript>
     <meta http-equiv="Refresh" content="0; URL=./nojs.html">
