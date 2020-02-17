@@ -33,8 +33,8 @@
       unset($i);
     }
   } else if (constant("envBranch") == "master") {
-    echo '<link rel="stylesheet" href="../dist/' . constant('envSHA') . '.min.css">', PHP_EOL;
-    echo '<script src="../dist/' . constant('envSHA') . '.min.obs.js"></script>', PHP_EOL;
+    echo '<link rel="stylesheet" href="/app/dist/' . constant('envSHA') . '.min.css">', PHP_EOL;
+    echo '<script src="/app/dist/' . constant('envSHA') . '.min.obs.js"></script>', PHP_EOL;
   }
   ?>
   <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
@@ -45,7 +45,7 @@
     <ul id="login-side-nav" class="side-nav fixed">
       <li>
         <div class="user-view grey darken-3">
-          <a><img class="circle" src="img/default-avatar.png"></a>
+          <a><img class="circle" src="/app/img/default-avatar.png"></a>
           <br>
         </div>
       </li>
@@ -75,9 +75,9 @@
       <li>
         <div class="user-view">
           <div class="background">
-            <img src="img/sidenav-background.jpg">
+            <img src="/app/img/sidenav-background.jpg">
           </div>
-          <a><img class="circle center" ng-src="img/avatar{{$storage.currentUser.avatar}}.png"></a>
+          <a><img class="circle center" ng-src="/app/img/avatar{{$storage.currentUser.avatar}}.png"></a>
           <br>
         </div>
       </li>

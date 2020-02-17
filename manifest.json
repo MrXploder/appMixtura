@@ -7,17 +7,17 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "img/short-logo-1.png",
+      "src": "/app/img/short-logo-1.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "img/short-logo-2.png",
+      "src": "/app/img/short-logo-2.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "img/short-logo-3.png",
+      "src": "/app/img/short-logo-3.png",
       "type": "image/png",
       "sizes": "192x192"
     }
