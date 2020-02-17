@@ -8,39 +8,39 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <!--NOSCRIPT-->
   <noscript><meta http-equiv="Refresh" content="0; URL=./nojs.html"></noscript>
-  <link rel="manifest" href="../manifest.json">
+  <link rel="manifest" href="/app/manifest.json">
   <!--No descuidar el orden de los archivos CCS y JS-->
   <!--CSS DEPENDENCIES-->
-  <link rel="stylesheet" href="../css/materialize.css">
-  <link rel="stylesheet" href="../css/materialize-stickyfooter.css">
-  <link rel='stylesheet' href="../css/loading-bar.css">
-  <link rel="stylesheet" href="../css/spinkit.css">
-  <link rel="stylesheet" href="../css/fontawesome.css">
-  <link rel="stylesheet" href="../css/webfont.css">
+  <link rel="stylesheet" href="/app/css/materialize.css">
+  <link rel="stylesheet" href="/app/css/materialize-stickyfooter.css">
+  <link rel='stylesheet' href="/app/css/loading-bar.css">
+  <link rel="stylesheet" href="/app/css/spinkit.css">
+  <link rel="stylesheet" href="/app/css/fontawesome.css">
+  <link rel="stylesheet" href="/app/css/webfont.css">
   <!--JAVASCRIPT DEPENDENCIES-->
-  <script src="../js/dependencies/jquery.js"></script>
-  <script src="../js/dependencies/angular.js"></script>
-  <script src="../js/dependencies/materialize.js"></script>
-  <script src="../js/dependencies/angular-html5storage.js"></script>
-  <script src="../js/dependencies/angular-loadingBar.js?v=<?php echo $versionControll ?>"></script>
-  <script src="../js/dependencies/angular-dirPagination.js"></script>
-  <script src="../js/dependencies/angular-materialize.js"></script>
-  <script src="../js/dependencies/FileSaver.js"></script>
-  <script src="../js/dependencies/xlsx.full.min.js"></script>
+  <script src="/app/js/dependencies/jquery.js"></script>
+  <script src="/app/js/dependencies/angular.js"></script>
+  <script src="/app/js/dependencies/materialize.js"></script>
+  <script src="/app/js/dependencies/angular-html5storage.js"></script>
+  <script src="/app/js/dependencies/angular-loadingBar.js?v=<?php echo $versionControll ?>"></script>
+  <script src="/app/js/dependencies/angular-dirPagination.js"></script>
+  <script src="/app/js/dependencies/angular-materialize.js"></script>
+  <script src="/app/js/dependencies/FileSaver.js"></script>
+  <script src="/app/js/dependencies/xlsx.full.min.js"></script>
   <!--ANGULARJS-APP-->
   <!--ANGULAR MODULES-->
-  <script src="../js/modules/appMixtura.js?v=<?php echo $versionControll ?>"></script>
+  <script src="/app/js/modules/appMixtura.js?v=<?php echo $versionControll ?>"></script>
   <!--ANGULAR FILTERS-->
-  <script src="../js/filters/datealt.js"></script>
-  <script src="../js/filters/myFullDateFormat.js"></script>
-  <script src="../js/filters/myFullDateFormatAlt.js"></script>
-  <script src="../js/filters/myShortDateFormatAlt.js"></script>
+  <script src="/app/js/filters/datealt.js"></script>
+  <script src="/app/js/filters/myFullDateFormat.js"></script>
+  <script src="/app/js/filters/myFullDateFormatAlt.js"></script>
+  <script src="/app/js/filters/myShortDateFormatAlt.js"></script>
   <!--ANGULAR RUNS-->
-  <script src="../js/runs/navigatorOnline.js"></script>
+  <script src="/app/js/runs/navigatorOnline.js"></script>
   <!--ANGULAR DIRECTIVES-->
-  <script src="../js/directives/stringToNumber.js"></script>
+  <script src="/app/js/directives/stringToNumber.js"></script>
   <!--ANGULAR CONTROLLERS-->
-  <script src="../js/controllers/apps.js?v=<?php echo $versionControll ?>"></script>
+  <script src="/app/js/controllers/apps.js?v=<?php echo $versionControll ?>"></script>
   <!--CUSTOM STYLES -->
   <style>    
   nav ul li a{
@@ -179,7 +179,7 @@
     <div class="navbar">
       <nav class="white">
         <div class="nav-wrapper">
-          <a href="#"><img src="../img/mixtura-logo.png" style="width: 150px; height: 63px"></img></a>
+          <a href="#"><img src="/app/img/mixtura-logo.png" style="width: 150px; height: 63px"></img></a>
         </div>
       </nav>
     </div>
@@ -1258,7 +1258,7 @@
                             <div class="input-field">
                               <select id="newtechdataNomAntivirus" class="validate" ng-model="newTechData.nom_antivirus" required material-select>
                                 <option value="Ninguno">Ninguno</option>
-                                <option value="Avast Free" data-icon="../img/logos/avast-logo.png">Avast Free</option>
+                                <option value="Avast Free" data-icon="/app/img/logos/avast-logo.png">Avast Free</option>
                               </select>
                               <label for="newtechdataNomAntivirus">Antivirus Instalado</label>
                             </div>
@@ -1267,7 +1267,7 @@
                             <div class="input-field">
                               <select id="newtechdataNomCcleaner" class="validate" ng-model="newTechData.nom_ccleaner" required material-select>
                                 <option value="Ninguno">Ninguno</option>
-                                <option value="Ccleaer" data-icon="../img/logos/ccleaner-logo.png">Ccleaner</option>
+                                <option value="Ccleaer" data-icon="/app/img/logos/ccleaner-logo.png">Ccleaner</option>
                               </select>
                               <label for="newtechdataNomCcleaner">PC Cleaner Instalado</label>
                             </div>
@@ -1276,7 +1276,7 @@
                             <div class="input-field">
                               <select id="newtechdataNomMalware" class="validate" ng-model="newTechData.nom_malware" required material-select>
                                 <option value="Ninguno">Ninguno</option>
-                                <option value="MalwareBytes Free" data-icon="../img/logos/malwarebytes-logo.png">MalwareBytes Free</option>
+                                <option value="MalwareBytes Free" data-icon="/app/img/logos/malwarebytes-logo.png">MalwareBytes Free</option>
                               </select>
                               <label for="newtechdataNomMalware">Malware Instalado</label>
                             </div>
@@ -1285,7 +1285,7 @@
                             <div class="input-field">
                               <select id="newtechdataNomAntispyware" class="validate" ng-model="newTechData.nom_antispyware" required material-select>
                                 <option value="Ninguno">Ninguno</option>
-                                <option value="SuperAntiSpyware" data-icon="../img/logos/superantispyware-logo.png">SuperAntiSpyware</option>
+                                <option value="SuperAntiSpyware" data-icon="/app/img/logos/superantispyware-logo.png">SuperAntiSpyware</option>
                               </select>
                               <label for="newtechdataNomAntispyware">AntiSpyware Instalado</label>
                             </div>
@@ -1712,7 +1712,7 @@
 <script>
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-    .register('../serviceWorker.js')
+    .register('/app/serviceWorker.js')
     .then(function() { console.log("Service Worker Registered"); });
   }
 </script>

@@ -95,7 +95,7 @@ appMixtura.controller('appController', ["$scope", "$rootScope", "$http", "$local
 				$scope.missing_table = "missing";
 			}
 
-			$http.get('../php/db_transactions/isAdmin.php', {params:{"admin_token" : $scope.admin_token, "missing_table" : $scope.missing_table}}).then(function successCallback(response){
+			$http.get('/app/php/db_transactions/isAdmin.php', {params:{"admin_token" : $scope.admin_token, "missing_table" : $scope.missing_table}}).then(function successCallback(response){
 				if(response.data.status === "found"){
 					response.data.tareas 						  ? ($scope.tickets 					 = $localStorage.tickets 					 		= response.data.tareas) 						 : ($scope.tickets 					   = $localStorage.tickets);
 					response.data.tareas_programadas  ? ($scope.scheduled_tickets = $localStorage.scheduled_tickets 		= response.data.tareas_programadas)  : ($scope.scheduled_tickets   = $localStorage.scheduled_tickets);
@@ -168,7 +168,7 @@ appMixtura.controller('appController', ["$scope", "$rootScope", "$http", "$local
 			});
 		}
 		else{
-			$http.get('../php/db_transactions/isClient.php').then(function successCallback(response){
+			$http.get('/app/php/db_transactions/isClient.php').then(function successCallback(response){
 				if(response.data.status === "found"){
 					$scope.tickets = response.data.tickets;
 					$scope.isAdmin  = {"status": false, "name": ""};
@@ -250,7 +250,7 @@ appMixtura.controller('appController', ["$scope", "$rootScope", "$http", "$local
 		var data  		= [$scope.selectedTicket, $scope.selectedProyect, $scope.selectedCliente];
 		
 		var typeIndex = types.indexOf(type);
-		$http.post('../php/db_transactions/'+updateDir[typeIndex], data[typeIndex]).then(function successCallback(response){
+		$http.post('/app/php/db_transactions/'+updateDir[typeIndex], data[typeIndex]).then(function successCallback(response){
 			if (response.data.status == "success") {
 				Materialize.toast('Modificado con Éxito!', 5000, 'green');
 				$('#'+modals[typeIndex]).modal('close');
@@ -278,7 +278,7 @@ appMixtura.controller('appController', ["$scope", "$rootScope", "$http", "$local
 
 		if($window.confirm('¿Estas seguro?')){
 			$('#preloaderScreen').modal('open');
-			$http.post('../php/db_transactions/'+dirs[typeIndex], data).then(function successCallback(response){
+			$http.post('/app/php/db_transactions/'+dirs[typeIndex], data).then(function successCallback(response){
 				if(response.data.status == "success"){
 					Materialize.toast('Eliminado con Éxito, actualizando.', 5000, 'green');
 					fetchUserData();
@@ -312,7 +312,7 @@ appMixtura.controller('appController', ["$scope", "$rootScope", "$http", "$local
 		
 		var mainIndex = formToSend.indexOf(nom_formulario);
 
-		$http.post('../php/db_transactions/'+addressToSend[mainIndex], objectToSend[mainIndex]).then(function successCallback(response){
+		$http.post('/app/php/db_transactions/'+addressToSend[mainIndex], objectToSend[mainIndex]).then(function successCallback(response){
 			if(response.data.status === "success"){
 				Materialize.toast('Creado con Exito', 5000, 'green');
 				$window.location.reload();

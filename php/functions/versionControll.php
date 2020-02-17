@@ -1,5 +1,5 @@
 <?php
-$versionControll = rand();
+$versionControll = 2;
 	/*
 	version rand(){
 		- is for development to prevent browser cache the files
@@ -26,5 +26,9 @@ $versionControll = rand();
 	}
 	version 1.6 - 24.01.2018{
 	}
+
+	version 2 - 17.02.2020 {
+		 - se arreglan porblemas con git por inexperiencia. Se archivará el proyecto.
+	}
 	*/
-	?>
+?>
