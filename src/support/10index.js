@@ -3,7 +3,7 @@
 
 angular.module('support', ['ngStorage', 'ngResource', 'angular-loading-bar', 'angularUtils.directives.dirPagination', 'ui.materialize'])
 
-.constant('ENV', {lastCommitNumber:'8',lastCommitAuthor:'"MrXploder"',lastCommitMessage:'"update\n"',lastCommitTime:'"2018-05-17 05:11:46 -0400"',currentUser:'MrXploder',shortSHA:'851bcb0',SHA:'851bcb0a478229bf2a1f4d440365d4936eb68272',name:'HEAD'})
+.constant('ENV', {lastCommitNumber:'9',lastCommitAuthor:'"Luis Arancibia"',lastCommitMessage:'"fix\n\n"',lastCommitTime:'"2020-02-17 15:13:42 -0300"',currentUser:'MrXploder',shortSHA:'5cd05f8',SHA:'5cd05f820ade70f0db926380ff90b47291c90695',name:'hotfix/stabilize'})
 
 ;
 })(angular);

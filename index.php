@@ -1,4 +1,4 @@
-<?php require $_SERVER['DOCUMENT_ROOT'].'/php/enviroment.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'].'/app/php/enviroment.php'; ?>
 <!DOCTYPE html>
 <html ng-app="support" ng-strict-di ng-cloak>
 <head>
