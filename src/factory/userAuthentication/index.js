@@ -8,7 +8,7 @@
 	userAuthentication.$inject = ["$resource"];
 
 	function userAuthentication($resource){
-		return $resource("/php/restapi/auth.php",{},{
+		return $resource("/app/php/restapi/auth.php",{},{
 			logIn:{
 				method: 'POST',
 			},

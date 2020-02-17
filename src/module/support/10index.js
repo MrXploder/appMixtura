@@ -1,9 +1,9 @@
 (function(angular, undefined) {
 'use strict';
 
-angular.module('support', ['ngAnimate', 'ngRoute', 'ngStorage', 'ngResource', 'angular-loading-bar', 'angularUtils.directives.dirPagination', 'ui.materialize'])
+angular.module('angularApp', ['ngAnimate', 'ngRoute', 'ngStorage', 'ngResource', 'angular-loading-bar', 'angularUtils.directives.dirPagination', 'ui.materialize'])
 
-.constant('ENV', {lastCommitNumber:'19',lastCommitAuthor:'"Luis Arancibia"',lastCommitMessage:'"hotfixes paths\n\n"',lastCommitTime:'"2020-02-17 14:45:25 -0300"',currentUser:'MrXploder',shortSHA:'9bc2d1d',SHA:'9bc2d1d19fe2534053e5a093ae0a2cf7b2a96c77',name:'master'})
+.constant('ENV', {lastCommitNumber:'21',lastCommitAuthor:'"Luis Arancibia"',lastCommitMessage:'"css materialize fix\n\n"',lastCommitTime:'"2020-02-17 14:48:35 -0300"',currentUser:'MrXploder',shortSHA:'d911d7e',SHA:'d911d7e2fe835428d7f8e3612b80b1238e413140',name:'master'})
 
 ;
 })(angular);

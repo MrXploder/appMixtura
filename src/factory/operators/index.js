@@ -8,6 +8,6 @@
 	operators.$inject = ['$resource', '$localStorage'];
 
 	function operators($resource, $localStorage){
-		return $resource("/php/restapi/operators.php",{});
+		return $resource("/app/php/restapi/operators.php",{});
 	};
 })();

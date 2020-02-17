@@ -26,7 +26,7 @@
 	function routeProvider($routeProvider){
 		$routeProvider
 		.when("/home", {
-			templateUrl: "/src/module/support/route/home/template.html",
+			templateUrl: "/app/src/module/support/route/home/template.html",
 			resolve: { initialData: defaultResolve },
 		})
 		.when("/login", {
@@ -42,13 +42,13 @@
 		.when("/viewTickets", {
 			controller: "viewTicketsController",
 			controllerAs: "vt",
-			templateUrl : "/src/module/support/route/viewTickets/template.html",
+			templateUrl : "/app/src/module/support/route/viewTickets/template.html",
 			resolve: { isLoggedIn: defaultResolve	},
 		})
 		.when("/createTickets", {
 			controller: "createTicketsController",
 			controllerAs: "ct",
-			templateUrl: "/src/module/support/route/createTickets/template.html",
+			templateUrl: "/app/src/module/support/route/createTickets/template.html",
 			resolve: { isLoggedIn: defaultResolve },
 		})
 		.otherwise({

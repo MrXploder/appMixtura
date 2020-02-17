@@ -7,6 +7,6 @@
 	clients.$inject = ['$resource', '$localStorage'];
 
 	function clients($resource, $localStorage){
-		return $resource("/php/restapi/clients.php",{});
+		return $resource("/app/php/restapi/clients.php",{});
 	};
 })();
