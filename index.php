@@ -1,4 +1,4 @@
-<?php require $_SERVER['DOCUMENT_ROOT'].'/php/functions/versionControll.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'].'/app/php/functions/versionControll.php'; ?>
 <!DOCTYPE html>
 <html ng-app="appMixtura" ng-controller="appController">
 <head>

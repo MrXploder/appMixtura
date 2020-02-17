@@ -2,12 +2,12 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require $_SERVER['DOCUMENT_ROOT'].'/php/dependencies/meekrodb.class.php';
-require $_SERVER['DOCUMENT_ROOT'].'/php/dependencies/Exception.php';
-require $_SERVER['DOCUMENT_ROOT'].'/php/dependencies/PHPMailer.php';
-require $_SERVER['DOCUMENT_ROOT'].'/php/dependencies/SMTP.php';
+require $_SERVER['DOCUMENT_ROOT'].'/app/php/dependencies/meekrodb.class.php';
+require $_SERVER['DOCUMENT_ROOT'].'/app/php/dependencies/Exception.php';
+require $_SERVER['DOCUMENT_ROOT'].'/app/php/dependencies/PHPMailer.php';
+require $_SERVER['DOCUMENT_ROOT'].'/app/php/dependencies/SMTP.php';
 
-require $_SERVER['DOCUMENT_ROOT'].'/php/functions/nthDayOfMonth.php';
+require $_SERVER['DOCUMENT_ROOT'].'/app/php/functions/nthDayOfMonth.php';
 
 function updateDB(){
 	DB::update('operadores', array('tareas' => 1), "tareas = %d", 0);
