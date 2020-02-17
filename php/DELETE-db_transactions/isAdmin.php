@@ -8,9 +8,9 @@ Header("Pragma: no-cache");
 error_reporting(E_ERROR);
 
 
-require $_SERVER['DOCUMENT_ROOT'].'/php/dependencies/sanitizeInput.php';
-require $_SERVER['DOCUMENT_ROOT'].'/php/dependencies/getIdFromIp.php';
-require $_SERVER['DOCUMENT_ROOT'].'/php/dependencies/meekrodb.class.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/app' .'/php/dependencies/sanitizeInput.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/app' .'/php/dependencies/getIdFromIp.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/app' .'/php/dependencies/meekrodb.class.php';
 //DB::debugMode();
 
 $admin_token 	 = sanitizeInput($_GET["admin_token"]);

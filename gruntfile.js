@@ -8,8 +8,8 @@ module.exports = function(grunt) {
       options: {
         space: ' ',
         wrap: true,
-        deps: ['ngStorage', 'ngResource', 'angular-loading-bar', 'angularUtils.directives.dirPagination', 'ui.materialize'],
-        dest: 'src/support/10index.js',
+        deps: ['ngAnimate', 'ngRoute', 'ngStorage', 'ngResource', 'angular-loading-bar', 'angularUtils.directives.dirPagination', 'ui.materialize'],
+        dest: 'src/module/support/10index.js',
         name: 'support'
       },
       dist: {
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         {constName: 'envShortSHA', constValue: '<%= gitinfo.local.branch.current.shortSHA %>'},
         {constName: 'envAuthor', constValue: '<%= gitinfo.local.branch.current.lastCommitAuthor %>'},
         {constName: 'envLastCommitTime', constValue: '<%= gitinfo.local.branch.current.lastCommitTime %>'},
-        {constName: 'envDebug', constValue: '<%= pkg.debug.mode %>'}
+        {constName: 'envBranch', constValue: '<%= gitinfo.local.branch.current.name %>'}
         ],
         src: 'php/enviroment.php',
         dest: 'php/enviroment.php'
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         separator: '\n',
       },
       js: {
-        src: ['src/vendor/*.js', 'src/support/*.js', 'src/directives/**/*.js', 'src/factories/**/*.js', 'src/support/modal/**/*.js', 'src/support/tab/**/*.js'],
+        src: ['src/vendor/*.js', 'src/module/support/*.js', 'src/directive/**/*.js', 'src/factory/**/*.js', 'src/filter/**/*.js',  'src/module/support/modal/**/*.js', 'src/module/support/route/**/*.js'],
         dest: 'dist/<%= gitinfo.local.branch.current.SHA %>.js',
       },
       css:{
@@ -65,7 +65,19 @@ module.exports = function(grunt) {
         }
       }
     },
-  });
+    obfuscator: {
+      options: {
+      },
+      task1: {
+        options: {
+            // options for each sub task
+          },
+          files: {
+            'dist/<%= gitinfo.local.branch.current.SHA %>.min.obs.js': ['dist/<%= gitinfo.local.branch.current.SHA %>.min.js']
+          }
+        }
+      }
+    });
 
   grunt.loadNpmTasks('grunt-gitinfo');
   grunt.loadNpmTasks('grunt-ng-constant');
@@ -73,6 +85,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-obfuscator');
 
-  grunt.registerTask('default', ['gitinfo', 'ngconstant', 'php_constants', 'concat', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['gitinfo', 'ngconstant', 'php_constants', 'concat', 'uglify', 'cssmin', 'obfuscator']);
+  grunt.registerTask('dev', ['gitinfo', 'ngconstant', 'php_constants']);
+
 };

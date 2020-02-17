@@ -1,12 +1,12 @@
 <?php
 /*DO NOT MODIFY THIS FILE BECAUSE IS POPULATED AUTOMATICALLY WITH GRUNT */
-
-define('envSHA', 'd6405d3df4d703901530a54c82a049e6bd97d4ef');
-define('envShortSHA', 'd6405d3');
-define('envAuthor', '"MrXploder"');
-define('envLastCommitTime', '"2018-05-15 16:33:21 -0400"');
-define('envDebug', 'development');
+date_default_timezone_set("America/Santiago");
 
 
+define('envSHA', '5303101ab031fbc75276d85cc1d9f20595c8133c');
+define('envShortSHA', '5303101');
+define('envAuthor', '"Luis Arancibia"');
+define('envLastCommitTime', '"2020-02-17 13:52:22 -0300"');
+define('envBranch', 'development');
 
 ?>

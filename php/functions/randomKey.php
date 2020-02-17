@@ -1,4 +1,9 @@
 <?php
+/*
+* @param $length (number) -> length of the random alphanumeric token
+* @author MrXploder
+
+*/
 function randomKey($length) {
     $pool = array_merge(range(0,9), range('a', 'z'),range('A', 'Z'));
 
@@ -7,4 +12,6 @@ function randomKey($length) {
     }
     return $key;
 }
+//USAGE:
+//echo $token = randomKey(20);
 ?>

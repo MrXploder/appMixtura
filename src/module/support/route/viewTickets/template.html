@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col l12 s12">
+    <nav class="top-nav amber" style="height: auto !important;">
+      <div class="nav-wrapper container">
+        <a class="page-title black-text">Administrar Tickets</a>
+      </div>
+    </nav>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field">
+    <i class="prefix fas fa-search"></i>
+    <input id="icon_prefix" ng-model="$storage.viewTicketsParams.searchTerm" type="search">
+    <label for="icon_prefix">Buscar</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col l2 s12">
+    <label class="black-text">Solo mostrar Incompletos</label>
+    <input-switch bind="$storage.viewTicketsParams.filterCompletedOnes"></input-switch>
+  </div>
+  <div input-field class="col offset-l1 l2 s12">
+    <label for="selectClienteForTicketFilter" ng-class="'active'">Mostrar por Cliente:</label>
+    <select id="selectClienteForTicketFilter" ng-model="$storage.viewTicketsParams.filterByClient" material-select watch>
+      <option value="-1">Todos</option>
+      <option ng-repeat="client in vt.clients" value="{{client.id}}">{{client.name}}</option>
+    </select>
+  </div>
+  <div input-field class="col offset-l1 l3 s12">
+    <label for="selectSolicitanteForTicketFilter" ng-class="'active'">Mostrar por Solicitante:</label>
+    <select id="selectSolicitanteForTicketFilter" ng-model="$storage.viewTicketsParams.filterByApplicant" material-select watch>
+      <option value="">Todos</option>
+      <option ng-repeat="applicant in vt.tickets | unique: 'name' | orderBy: name: false" value="{{applicant.name}}">{{applicant.name}}</option>
+    </select>
+  </div>
+  <div input-field class="col offset-l1 l2 s12">
+    <label for="selectCantidadPaginasTicket" ng-class="'active'">Tareas por Pagina</label>
+    <select id="selectCantidadPaginasTicket" ng-model="$storage.viewTicketsParams.pagesToShow" material-select>
+      <option ng-repeat="range in vt.rangesToShow" ng-value="range">{{range}}</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+  <table class="bordered highlight responsive-table trunkated-table colored-table">
+    <thead>
+      <tr>
+        <th ng-click="$storage.viewTicketsParams.sortBy = 'id'; $storage.viewTicketsParams.sortReverse = !$storage.viewTicketsParams.sortReverse" ng-class="$storage.viewTicketsParams.sortBy == 'id' ? 'sortedColumn':''" class="clickable">#</th>
+        <th>Nombre Solicitante</th>
+        <th>Cliente</th>
+        <th>Fecha de Creación</th>
+        <th>Fecha de Ejecución</th>
+        <th>Descripcion</th>
+        <th ng-click="$storage.viewTicketsParams.sortBy = 'time_amount'; $storage.viewTicketsParams.sortReverse = !$storage.viewTicketsParams.sortReverse" ng-class="$storage.viewTicketsParams.sortBy == 'time_amount' ? 'sortedColumn':''" class="clickable">Horas</th>
+        <th ng-click="$storage.viewTicketsParams.sortBy = 'progress'; $storage.viewTicketsParams.sortReverse = !$storage.viewTicketsParams.sortReverse" ng-class="$storage.viewTicketsParams.sortBy == 'progress' ? 'sortedColumn':''" class="clickable">Avance</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr dir-paginate="ticket in filteredTickets = (vt.tickets | filter: (($storage.viewTicketsParams.filterByClient >= 0) || undefined) && {client_id : $storage.viewTicketsParams.filterByClient} | filter: (($storage.viewTicketsParams.filterByApplicant != '') || undefined) && {name : $storage.viewTicketsParams.filterByApplicant} | filter:($storage.viewTicketsParams.filterCompletedOnes || undefined) && (progress = '!100') | filter: $storage.viewTicketsParams.searchTerm | orderBy: $storage.viewTicketsParams.sortBy: $storage.viewTicketsParams.sortReverse) | itemsPerPage: $storage.viewTicketsParams.pagesToShow track by ticket.id" pagination-id="ticketsPaginationId">
+        <td><a class="btn btnForTable waves-effect waves-light blue" ng-class="mc.onLine ? '':'disabled'" ng-click="vt.openTicket(ticket.id)">{{ticket.id}}</a></td>
+        <td class="vMiddle hCenter">{{ticket.name}}</td>
+        <td class="vMiddle hCenter">{{ticket.client_name}}</td>
+        <td class="vMiddle hCenter">{{ticket.opened_the}}</td>
+        <td class="vMiddle hCenter">{{ticket.closed_on ? ticket.closed_on:'No Disponible'}}</td>
+        <td class="vMiddle hCenter description tooltipped truncate" data-position="right" data-delay="50" data-tooltip="{{ticket.description}}">{{ticket.description}}</td>
+        <td class="hCenter">{{ticket.time_amount}}</td>
+        <td class="hCenter" ng-class="ticket.progress < 50 ? 'red-text text-accent-4':(ticket.progress < 99 ? 'yellow-text text-accent-4':'green-text text-accent-4')"><i ng-class="ticket.progress < 99 ? 'fa fa-exclamation-circle':'fa fa-thumbs-up'"></i>{{ticket.progress}}%</td>
+        <td><a class="btn btnForTable waves-effect waves-light red" ng-class="mc.onLine ? '':'disabled'"><i class="fas fa-trash"></i></a></td>
+      </tr>
+      <tr ng-if="filteredTickets.length == 0">
+        <td colspan="2">Sin Coincidencias...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+&nbsp;
+<div class="row">
+  <dir-pagination-controls boundary-links="true" template-url="/src/directive/dirPaginationControls/template.html" pagination-id="ticketsPaginationId" on-page-change="reloadToolTip()"></dir-pagination-controls>
+</div>
