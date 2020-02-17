@@ -19,9 +19,9 @@
 
 class DB {
   // initial connection
-  public static $dbName = 'appmixtu_db';
-  public static $user = 'appmixtu_root';
-  public static $password = 'f7eIPWZJuoQ3qoht';
+  public static $dbName = 'mixtucl_app';
+  public static $user = 'mixtucl_adminapp';
+  public static $password = '%]3LJ7%uh3ii%]';
   public static $host = 'localhost';
   public static $port = null;
   public static $encoding = 'utf8';
@@ -114,9 +114,9 @@ class DB {
 
 class MeekroDB {
   // initial connection
-  public $dbName = 'appmixtu_db';
-  public $user = 'appmixtu_root';
-  public $password = 'f7eIPWZJuoQ3qoht';
+  public $dbName = 'mixtucl_app';
+  public $user = 'mixtucl_adminapp';
+  public $password = '%]3LJ7%uh3ii%]';
   public $host = 'localhost';
   public $port = null;
   public $encoding = 'utf8';
