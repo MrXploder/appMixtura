@@ -185,7 +185,7 @@ angularApp.controller('support', function($scope, $rootScope, $http, $localStora
 				$scope.missing_table = "missing";
 			}
 
-			$http.get('../php/db_transactions/resources.php', {params:{"requested_resource": "all", "security_token": $scope.admin_token}}).then(function successCallback(response){
+			$http.get('/app/php/db_transactions/resources.php', {params:{"requested_resource": "all", "security_token": $scope.admin_token}}).then(function successCallback(response){
 				if(response.status === 200){
 
 
@@ -195,7 +195,7 @@ angularApp.controller('support', function($scope, $rootScope, $http, $localStora
 			});
 		}
 		else{
-			$http.get('../php/db_transactions/isClient.php').then(function successCallback(response){
+			$http.get('/app/php/db_transactions/isClient.php').then(function successCallback(response){
 				if(response.data.status === "found"){
 					$scope.tickets = response.data.tickets;
 					$scope.isAdmin  = {"status": false, "name": ""};
@@ -277,7 +277,7 @@ angularApp.controller('support', function($scope, $rootScope, $http, $localStora
 		var data  		= [$scope.selectedTicket, $scope.selectedProyect, $scope.selectedCliente];
 
 		var typeIndex = types.indexOf(type);
-		$http.post('../php/db_transactions/'+updateDir[typeIndex], data[typeIndex]).then(function successCallback(response){
+		$http.post('/app/php/db_transactions/'+updateDir[typeIndex], data[typeIndex]).then(function successCallback(response){
 			if (response.data.status == "success") {
 				Materialize.toast('Modificado con Éxito!', 5000, 'green');
 				$('#'+modals[typeIndex]).modal('close');
@@ -305,7 +305,7 @@ angularApp.controller('support', function($scope, $rootScope, $http, $localStora
 
 		if($window.confirm('¿Estas seguro?')){
 			$('#preloaderScreen').modal('open');
-			$http.post('../php/db_transactions/'+dirs[typeIndex], data).then(function successCallback(response){
+			$http.post('/app/php/db_transactions/'+dirs[typeIndex], data).then(function successCallback(response){
 				if(response.data.status == "success"){
 					Materialize.toast('Eliminado con Éxito, actualizando.', 5000, 'green');
 					fetchUserData();
@@ -339,7 +339,7 @@ angularApp.controller('support', function($scope, $rootScope, $http, $localStora
 
 		var mainIndex = formToSend.indexOf(nom_formulario);
 
-		$http.post('../php/db_transactions/'+addressToSend[mainIndex], objectToSend[mainIndex]).then(function successCallback(response){
+		$http.post('/app/php/db_transactions/'+addressToSend[mainIndex], objectToSend[mainIndex]).then(function successCallback(response){
 			if(response.data.status === "success"){
 				Materialize.toast('Creado con Exito', 5000, 'green');
 				$window.location.reload();

@@ -8,7 +8,7 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <!--NOSCRIPT-->
   <noscript><meta http-equiv="Refresh" content="0; URL=./nojs.html"></noscript>
-  <link rel="manifest" href="../manifest.json">
+  <link rel="manifest" href="/app/manifest.json">
   <!--No descuidar el orden de los archivos CCS y JS-->
   <!--CSS DEPENDENCIES-->
   <?php
@@ -30,8 +30,8 @@
     }
   }
   else if(constant("envDebug") == "production"){
-    echo '<link rel="stylesheet" href="../dist/${envSHA}.min.css">', PHP_EOL;
-    echo '<script src="../dist/${envSHA}.min.js"></script>', PHP_EOL;
+    echo '<link rel="stylesheet" href="/app/dist/${envSHA}.min.css">', PHP_EOL;
+    echo '<script src="/app/dist/${envSHA}.min.js"></script>', PHP_EOL;
   }
   ?>
 </head>
@@ -40,7 +40,7 @@
     <div class="navbar">
       <nav class="white">
         <div class="nav-wrapper">
-          <a href="#"><img src="../img/mixtura-logo.png" style="width: 150px; height: 63px"></img></a>
+          <a href="#"><img src="/app/img/mixtura-logo.png" style="width: 150px; height: 63px"></img></a>
         </div>
       </nav>
     </div>

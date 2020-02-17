@@ -8,6 +8,6 @@ angularApp.directive('textField', function(){
 			disabled: "=",
 		},
 		controller: 'textField',
-		templateUrl: '../js/directives/textField/template.html',
+		templateUrl: '/app/js/directives/textField/template.html',
 	}
 });
